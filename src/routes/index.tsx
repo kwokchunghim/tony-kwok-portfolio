@@ -15,8 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     bullets: [
-      "Productionised a real-time ML system that optimises subscription grace period eligibility upon payment failures, balancing revenue retention and subscriber experience.",
-      "Led end-to-end migration of an ML pipeline from a legacy orchestration framework to a modern ML platform, improving observability, scalability, and ecosystem alignment.",
+      "Real-time ML for subscription retention and payments.",
     ],
   },
   {
@@ -24,8 +23,7 @@ const EXPERIENCE = [
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     bullets: [
-      "Built and deployed a contextual bandit model powering personalised in-app promotional content at scale, driving measurable ticket conversion uplift.",
-      "Owned the full ML lifecycle: model training, offline policy evaluation, A/B experiment tracking, and production monitoring.",
+      "Contextual bandits for in-app personalisation, end-to-end.",
     ],
   },
   {
@@ -33,7 +31,7 @@ const EXPERIENCE = [
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
     bullets: [
-      "Built a graph-based digital twin of a national gas distribution network to simulate leakage scenarios, powering downstream ML models for methane leak prediction and characterisation.",
+      "Graph-based digital twin for methane leak prediction.",
     ],
   },
   {
@@ -41,7 +39,7 @@ const EXPERIENCE = [
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     bullets: [
-      "Developed deep learning models to automate complex medical image classification tasks using PyTorch.",
+      "Deep learning for medical image classification.",
     ],
   },
 ];
@@ -79,16 +77,17 @@ function Index() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
               </span>
-              Available for interesting problems
+              Entering my builder era · startup-bound
             </div>
             <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Tony C.H. Kwok
             </h1>
             <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
-              Machine Learning Engineer
+              ML Engineer → Builder
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Building production ML systems at scale.
+              Years of shipping production ML at scale. Now turning those reps into
+              something of my own — building toward startups.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -124,12 +123,14 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="About" title="ML engineer with a builder's mindset.">
+      <Section id="about" eyebrow="About" title="From shipping ML to shipping products.">
         <div className="glass rounded-2xl p-8 sm:p-10">
           <p className="text-lg leading-relaxed text-foreground/90">
-            Machine Learning Engineer with a background in Statistics and Mathematics. Passionate
-            about building and deploying real-world ML systems — from real-time personalisation to
-            graph-based simulation.
+            I've spent the last few years as an ML Engineer shipping real-world systems
+            at scale — personalisation, real-time inference, graph-based simulation.
+            Now I'm transitioning into my <span className="text-primary font-medium">builder era</span>:
+            using that engineering muscle to ship products end-to-end and pave the way
+            toward starting something of my own.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
