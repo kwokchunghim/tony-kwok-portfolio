@@ -281,7 +281,7 @@ function Index() {
             className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
           >
-            <Mail className="h-4 w-4" /> chkwok730 [at] gmail [dot] com
+            <Mail className="h-4 w-4" /> chkwok730@gmail.com
           </a>
           <div className="mt-10 flex items-center justify-center gap-6 text-muted-foreground">
             <a href="https://github.com/kwokchunghim" target="_blank" rel="noreferrer noopener" aria-label="GitHub" className="transition hover:text-primary">
