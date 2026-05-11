@@ -83,11 +83,11 @@ function Index() {
               Tony C.H. Kwok
             </h1>
             <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
-              ML Engineer → Builder
+              ML engineer, learning to build
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Years of shipping production ML at scale. Now turning those reps into
-              something of my own — building toward startups.
+              Spent a few years shipping ML at scale. Spending the next few
+              figuring out how to build my own things.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -96,14 +96,14 @@ function Index() {
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
                 style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
               >
-                View Work
+                See what I've shipped
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
               </a>
               <a
                 href="mailto:chkwok730@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary/60 hover:text-primary"
               >
-                <Mail className="h-4 w-4" /> Get in Touch
+                <Mail className="h-4 w-4" /> Say hi
               </a>
             </div>
 
