@@ -228,10 +228,10 @@ function Index() {
             <ExternalLink className="h-5 w-5 text-muted-foreground transition group-hover:text-primary" />
           </div>
           <p className="mt-5 max-w-3xl text-foreground/85">
-            Vision-language model for automated chest X-ray report generation, built on Generative
-            Image Transformers (GIT). Developed as part of the NHS-backed X-Raydar Project led by
-            Prof. Giovanni Montana at King's College London, improving the clinical quality and
-            coherence of AI-generated radiology reports.
+            Contributor to GIT-ARRG-X, a vision-language model for automated chest X-ray report
+            generation built on Generative Image Transformers (GIT). Part of the NHS-backed
+            X-Raydar Project led by Prof. Giovanni Montana at the University of Warwick,
+            improving the clinical quality and coherence of AI-generated radiology reports.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {["PyTorch", "Vision-Language", "Medical AI", "NLP"].map((t) => (
