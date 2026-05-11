@@ -77,17 +77,18 @@ function Index() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
               </span>
-              Entering my builder era · startup-bound
+              MLE by day · builder by night
             </div>
             <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Tony Kwok
             </h1>
             <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
-              ML engineer, learning to build
+              ML by day, building at night
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Spent a few years shipping ML at scale. Spending the next few
-              figuring out how to build my own things.
+              MLE at Spotify. After hours, I tinker on side projects —
+              mostly around how AI is reshaping subscription and freemium
+              businesses, with a soft spot for next-gen AI in healthcare.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -96,7 +97,7 @@ function Index() {
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
                 style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
               >
-                See what I've shipped
+                See what I've worked on
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
               </a>
               <a
@@ -123,14 +124,15 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="About" title="From shipping ML to shipping products.">
+      <Section id="about" eyebrow="About" title="Day job, night job.">
         <div className="glass rounded-2xl p-8 sm:p-10">
           <p className="text-lg leading-relaxed text-foreground/90">
-            I've spent the last few years as an ML Engineer shipping real-world systems
-            at scale — personalisation, real-time inference, graph-based simulation.
-            Now I'm transitioning into my <span className="text-primary font-medium">builder era</span>:
-            using that engineering muscle to ship products end-to-end and pave the way
-            toward starting something of my own.
+            By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
+            working on personalisation and user understanding for subscriptions.
+            By night, I build things — lately I've been obsessed with how
+            AI is going to reshape traditional ML in subscription and freemium
+            businesses (a rabbit hole my day job keeps pushing me down), and
+            with what next-gen AI looks like in healthcare.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
