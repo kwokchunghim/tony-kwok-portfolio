@@ -15,8 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     bullets: [
-      "Productionised a real-time ML system that optimises subscription grace period eligibility upon payment failures, balancing revenue retention and subscriber experience.",
-      "Led end-to-end migration of an ML pipeline from a legacy orchestration framework to a modern ML platform, improving observability, scalability, and ecosystem alignment.",
+      "Real-time ML for subscription retention and payments.",
     ],
   },
   {
@@ -24,8 +23,7 @@ const EXPERIENCE = [
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     bullets: [
-      "Built and deployed a contextual bandit model powering personalised in-app promotional content at scale, driving measurable ticket conversion uplift.",
-      "Owned the full ML lifecycle: model training, offline policy evaluation, A/B experiment tracking, and production monitoring.",
+      "Contextual bandits for in-app personalisation, end-to-end.",
     ],
   },
   {
@@ -33,7 +31,7 @@ const EXPERIENCE = [
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
     bullets: [
-      "Built a graph-based digital twin of a national gas distribution network to simulate leakage scenarios, powering downstream ML models for methane leak prediction and characterisation.",
+      "Graph-based digital twin for methane leak prediction.",
     ],
   },
   {
@@ -41,7 +39,7 @@ const EXPERIENCE = [
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     bullets: [
-      "Developed deep learning models to automate complex medical image classification tasks using PyTorch.",
+      "Deep learning for medical image classification.",
     ],
   },
 ];
