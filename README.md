@@ -2,8 +2,6 @@
 
 Personal site of Tony Kwok. ML Engineer at Spotify by day, building products by night.
 
-Live: https://id-preview--b99d9c95-b72e-47b0-9511-8ef6464bc2e7.lovable.app
-
 ## Stack
 
 - TanStack Start (React 19 + Vite 7)
