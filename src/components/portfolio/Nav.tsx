@@ -45,7 +45,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="group flex items-center gap-2 text-sm font-semibold tracking-tight">
           <span className="grid h-7 w-7 place-items-center rounded-md border border-border bg-card/70 backdrop-blur text-gradient">TK</span>
-          <span className="hidden sm:inline text-foreground/90">Tony C.H. Kwok</span>
+          <span className="hidden sm:inline text-foreground/90">Tony Kwok</span>
         </a>
         <nav
           className={`glass hidden rounded-full px-2 py-1.5 md:flex ${
