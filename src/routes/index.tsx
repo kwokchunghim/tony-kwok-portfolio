@@ -80,7 +80,7 @@ function Index() {
               Entering my builder era · startup-bound
             </div>
             <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-              Tony C.H. Kwok
+              Tony Kwok
             </h1>
             <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
               ML engineer, learning to build
@@ -295,7 +295,7 @@ function Index() {
             </a>
           </div>
           <p className="mt-10 text-xs text-muted-foreground/70">
-            © {new Date().getFullYear()} Tony C.H. Kwok
+            © {new Date().getFullYear()} Tony Kwok
           </p>
         </div>
       </footer>
