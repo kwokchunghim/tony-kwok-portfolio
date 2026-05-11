@@ -15,7 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     bullets: [
-      "Real-time ML for subscription retention and payments.",
+      "Subscriptions R&D — User Understanding.",
     ],
   },
   {
@@ -23,7 +23,7 @@ const EXPERIENCE = [
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     bullets: [
-      "Contextual bandits for in-app personalisation, end-to-end.",
+      "Profitable Growth and Customer LTV.",
     ],
   },
   {
@@ -31,7 +31,7 @@ const EXPERIENCE = [
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
     bullets: [
-      "Graph-based digital twin for methane leak prediction.",
+      "Digital Twins for Gas Distribution Network.",
     ],
   },
   {
@@ -39,7 +39,7 @@ const EXPERIENCE = [
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     bullets: [
-      "Deep learning for medical image classification.",
+      "Image Classification for Orthopaedics.",
     ],
   },
 ];
