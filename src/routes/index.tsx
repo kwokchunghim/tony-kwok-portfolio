@@ -225,19 +225,21 @@ function Index() {
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h3 className="text-2xl font-semibold tracking-tight">GIT-ARRG-X</h3>
-              <p className="mt-1 text-sm text-primary">x-raydar.info</p>
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Automatic Radiological Report Generation of Chest Radiographs using Deep Learning
+              </h3>
+              <p className="mt-1 text-sm text-primary">Apr 2023 – Sep 2023 · x-raydar.info</p>
             </div>
             <ExternalLink className="h-5 w-5 text-muted-foreground transition group-hover:text-primary" />
           </div>
           <p className="mt-5 max-w-3xl text-foreground/85">
-            Contributor to GIT-ARRG-X, a vision-language model for automated chest X-ray report
-            generation built on Generative Image Transformers (GIT). Part of the NHS-backed
-            X-Raydar Project led by Prof. Giovanni Montana at the University of Warwick,
-            improving the clinical quality and coherence of AI-generated radiology reports.
+            Before OpenAI and Anthropic took over the field, I developed an image-to-text
+            chest X-ray reporting model and contributed to an ongoing initiative to automate
+            X-ray reporting with generative AI, led by Professor Giovanni Montana at the
+            University of Warwick. Awarded the MSc Statistics Best Dissertation Prize 2022/2023.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {["PyTorch", "Vision-Language", "Medical AI", "NLP"].map((t) => (
+            {["PyTorch", "Image-to-Text", "Medical AI", "Generative AI", "Best Dissertation Prize"].map((t) => (
               <span key={t} className="rounded-full border border-border bg-background/40 px-3 py-1 text-xs text-muted-foreground">
                 {t}
               </span>
