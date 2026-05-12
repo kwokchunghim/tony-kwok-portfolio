@@ -127,15 +127,7 @@ function Index() {
       <Section id="about" eyebrow="About" title="Day job, night job.">
         <div className="glass rounded-2xl p-8 sm:p-10">
           <p className="text-lg leading-relaxed text-foreground/90">
-            By day, I'm an MLE at{" "}
-            <a
-              href="https://www.spotify.com"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-primary font-medium underline-offset-4 hover:underline"
-            >
-              Spotify
-            </a>,
+            By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
             working on personalisation and user understanding for subscriptions.
             By night, I build things — lately I've been obsessed with how
             AI is going to reshape traditional ML in subscription and freemium
