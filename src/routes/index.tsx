@@ -72,23 +72,16 @@ function Index() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1 text-xs font-medium text-muted-foreground backdrop-blur">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              MLE by day · builder by night
-            </div>
             <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
               Tony Kwok
             </h1>
             <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
-              ML by day, building at night
+              MLE by day, Builder by night
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              MLE at Spotify. After hours, I tinker on side projects —
-              mostly around how AI is reshaping subscription and freemium
-              businesses, with a soft spot for next-gen AI in healthcare.
+              MLE at Spotify, working on Subscriptions — User Understanding.
+              After hours, I tinker on side projects exploring how AI is
+              reshaping subscription and freemium businesses.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
