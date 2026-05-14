@@ -37,7 +37,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: "Applied Data Scientist",
+    role: "AI Research Assistant",
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     bullets: [
