@@ -83,9 +83,9 @@ function Index() {
               MLE by day, Builder by night
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              MLE at Spotify, working on Subscriptions — User Understanding.
-              After hours, I tinker on side projects exploring how AI is
-              reshaping subscription and freemium businesses.
+              Machine Learning Engineer @ Spotify working on User Understanding
+              for the Subscriptions Mission. After hours, I tinker on side
+              projects exploring how AI is reshaping the world.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -171,7 +171,7 @@ function Index() {
             src={tonyNetworking}
             alt="Tony Kwok mingling with colleagues at a Spotify event"
             loading="lazy"
-            className="aspect-[16/9] w-full object-cover object-top md:aspect-[21/9]"
+            className="w-full object-contain"
           />
         </div>
       </Section>
