@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { ArrowDown, Calendar, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
 import { Section } from "@/components/portfolio/Section";
@@ -97,10 +97,12 @@ function Index() {
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
               </a>
               <a
-                href="mailto:chkwok730@gmail.com"
+                href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary/60 hover:text-primary"
               >
-                <Mail className="h-4 w-4" /> Say hi
+                <Calendar className="h-4 w-4" /> Let's chat
               </a>
             </div>
 
@@ -303,14 +305,17 @@ function Index() {
             Open to <span className="text-gradient">interesting problems</span>.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            The best way to reach me is email — I read everything.
+            Got a wild startup idea, a hard ML problem, or want to collaborate on
+            something cool? Grab a slot on my calendar — I'd love to chat.
           </p>
           <a
-            href="mailto:chkwok730@gmail.com"
+            href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
+            target="_blank"
+            rel="noreferrer noopener"
             className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
           >
-            <Mail className="h-4 w-4" /> chkwok730@gmail.com
+            <Calendar className="h-4 w-4" /> Schedule a chat
           </a>
           <div className="mt-10 flex items-center justify-center gap-6 text-muted-foreground">
             <a href="https://github.com/kwokchunghim" target="_blank" rel="noreferrer noopener" aria-label="GitHub" className="transition hover:text-primary">
