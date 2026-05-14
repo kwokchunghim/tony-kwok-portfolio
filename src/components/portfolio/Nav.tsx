@@ -74,10 +74,12 @@ export function Nav() {
           ))}
         </nav>
         <a
-          href="mailto:chkwok730@gmail.com"
+          href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
+          target="_blank"
+          rel="noreferrer noopener"
           className="hidden rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium backdrop-blur transition hover:border-primary/60 hover:text-primary md:inline-block"
         >
-          Say hi
+          Let's chat
         </a>
       </div>
     </header>
