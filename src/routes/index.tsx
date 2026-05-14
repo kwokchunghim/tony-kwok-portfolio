@@ -147,11 +147,9 @@ function Index() {
           <div className="glass rounded-2xl p-8 sm:p-10">
             <p className="text-lg leading-relaxed text-foreground/90">
               By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
-              working on personalisation and user understanding for subscriptions.
-              By night, I build things — lately I've been obsessed with how
-              AI is going to reshape traditional ML in subscription and freemium
-              businesses (a rabbit hole my day job keeps pushing me down), and
-              with what next-gen AI looks like in healthcare.
+              working on personalization and user understanding to drive
+              conversion, revenue, and retention for the business. By night,
+              I build cool stuff.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
