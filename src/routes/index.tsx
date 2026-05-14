@@ -4,6 +4,9 @@ import { ArrowDown, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-
 import { Nav } from "@/components/portfolio/Nav";
 import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
 import { Section } from "@/components/portfolio/Section";
+import tonySpeaking from "@/assets/tony-speaking.jpg";
+import tonyNetworking from "@/assets/tony-networking.jpg";
+import thisIsTonyK from "@/assets/this-is-tony-k.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -66,6 +69,7 @@ function Index() {
         />
         <NeuralBackground />
         <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
+          <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,23 +117,62 @@ function Index() {
               </a>
             </div>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+            className="relative hidden md:block"
+          >
+            <div
+              aria-hidden
+              className="absolute -inset-6 -z-10 rounded-[2rem] opacity-40 blur-2xl"
+              style={{ background: "var(--gradient-primary)" }}
+            />
+            <div className="overflow-hidden rounded-3xl border border-border/60 bg-card/40 shadow-2xl backdrop-blur">
+              <img
+                src={tonySpeaking}
+                alt="Tony Kwok speaking on a panel at Spotify Intro Days"
+                loading="eager"
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ABOUT */}
       <Section id="about" eyebrow="About" title="Day job, night job.">
-        <div className="glass rounded-2xl p-8 sm:p-10">
-          <p className="text-lg leading-relaxed text-foreground/90">
-            By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
-            working on personalisation and user understanding for subscriptions.
-            By night, I build things — lately I've been obsessed with how
-            AI is going to reshape traditional ML in subscription and freemium
-            businesses (a rabbit hole my day job keeps pushing me down), and
-            with what next-gen AI looks like in healthcare.
-          </p>
-          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
+        <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
+          <div className="glass rounded-2xl p-8 sm:p-10">
+            <p className="text-lg leading-relaxed text-foreground/90">
+              By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
+              working on personalisation and user understanding for subscriptions.
+              By night, I build things — lately I've been obsessed with how
+              AI is going to reshape traditional ML in subscription and freemium
+              businesses (a rabbit hole my day job keeps pushing me down), and
+              with what next-gen AI looks like in healthcare.
+            </p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
+              <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
+            </div>
           </div>
+          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/40 shadow-xl">
+            <img
+              src={thisIsTonyK}
+              alt="Spotify-style 'This Is Tony K' playlist cover"
+              loading="lazy"
+              className="aspect-square w-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-border/60 bg-card/40 shadow-xl">
+          <img
+            src={tonyNetworking}
+            alt="Tony Kwok mingling with colleagues at a Spotify event"
+            loading="lazy"
+            className="aspect-[16/7] w-full object-cover"
+          />
         </div>
       </Section>
 
