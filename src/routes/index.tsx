@@ -98,7 +98,7 @@ function Index() {
               </a>
               <a
                 href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
-                target="_blank"
+                target="_top"
                 rel="noreferrer noopener"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary/60 hover:text-primary"
               >
@@ -310,7 +310,7 @@ function Index() {
           </p>
           <a
             href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
-            target="_blank"
+            target="_top"
             rel="noreferrer noopener"
             className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
             style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}

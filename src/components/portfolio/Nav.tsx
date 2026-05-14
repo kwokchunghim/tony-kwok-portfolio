@@ -75,7 +75,7 @@ export function Nav() {
         </nav>
         <a
           href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
-          target="_blank"
+          target="_top"
           rel="noreferrer noopener"
           className="hidden rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium backdrop-blur transition hover:border-primary/60 hover:text-primary md:inline-block"
         >
