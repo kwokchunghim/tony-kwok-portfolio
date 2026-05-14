@@ -127,12 +127,12 @@ function Index() {
               className="absolute -inset-6 -z-10 rounded-[2rem] opacity-40 blur-2xl"
               style={{ background: "var(--gradient-primary)" }}
             />
-            <div className="overflow-hidden rounded-3xl border border-border/60 bg-card/40 shadow-2xl backdrop-blur">
+            <div className="overflow-hidden rounded-3xl shadow-2xl">
               <img
                 src={tonySpeaking}
                 alt="Tony Kwok speaking on a panel at Spotify Intro Days"
                 loading="eager"
-                className="aspect-square w-full object-cover"
+                className="block h-auto w-full"
               />
             </div>
           </motion.div>
