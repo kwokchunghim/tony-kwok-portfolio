@@ -171,7 +171,7 @@ function Index() {
             src={tonyNetworking}
             alt="Tony Kwok mingling with colleagues at a Spotify event"
             loading="lazy"
-            className="aspect-[16/7] w-full object-cover"
+            className="aspect-[16/9] w-full object-cover object-top md:aspect-[21/9]"
           />
         </div>
       </Section>
