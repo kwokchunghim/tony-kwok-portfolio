@@ -5,7 +5,6 @@ import { Nav } from "@/components/portfolio/Nav";
 import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
 import { Section } from "@/components/portfolio/Section";
 import tonySpeaking from "@/assets/tony-speaking.jpg";
-import tonyNetworking from "@/assets/tony-networking.jpg";
 import thisIsTonyK from "@/assets/this-is-tony-k.png";
 
 export const Route = createFileRoute("/")({
@@ -163,14 +162,6 @@ function Index() {
               className="aspect-square w-full object-cover"
             />
           </div>
-        </div>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-border/60 bg-card/40 shadow-xl">
-          <img
-            src={tonyNetworking}
-            alt="Tony Kwok mingling with colleagues at a Spotify event"
-            loading="lazy"
-            className="w-full object-contain"
-          />
         </div>
       </Section>
 
