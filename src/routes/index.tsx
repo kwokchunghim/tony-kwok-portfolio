@@ -37,7 +37,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: "AI Research Assistant",
+    role: "Research Assistant (Medical AI)",
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     bullets: [
