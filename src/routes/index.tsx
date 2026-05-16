@@ -244,22 +244,16 @@ function Index() {
 
       {/* PROJECTS */}
       <Section id="projects" eyebrow="Projects" title="Selected work.">
-        <a
-          href="https://x-raydar.info"
-          target="_blank"
-          rel="noreferrer noopener"
-          className="border-gradient group block overflow-hidden rounded-2xl bg-card/60 p-8 backdrop-blur-xl transition hover:-translate-y-0.5"
-        >
+        <div className="border-gradient overflow-hidden rounded-2xl bg-card/60 p-8 backdrop-blur-xl">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h3 className="text-2xl font-semibold tracking-tight">
                 Automatic Radiological Report Generation of Chest Radiographs using Deep Learning
               </h3>
-              <p className="mt-1 text-sm text-primary">Apr 2023 – Sep 2023 · x-raydar.info</p>
+              <p className="mt-1 text-sm text-primary">Apr 2023 – Sep 2023</p>
             </div>
-            <ExternalLink className="h-5 w-5 text-muted-foreground transition group-hover:text-primary" />
           </div>
-          <p className="mt-5 max-w-3xl text-foreground/85">
+          <p className="mt-5 text-foreground/85">
             Before OpenAI and Anthropic took over the field, I developed an image-to-text
             chest X-ray reporting model and contributed to an ongoing initiative to automate
             X-ray reporting with generative AI, led by Professor Giovanni Montana at the
@@ -272,7 +266,7 @@ function Index() {
               </span>
             ))}
           </div>
-        </a>
+        </div>
       </Section>
 
       {/* EDUCATION */}
