@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowDown, Calendar, Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { ArrowDown, Calendar, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
 import { Section } from "@/components/portfolio/Section";
