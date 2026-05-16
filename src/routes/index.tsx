@@ -300,7 +300,9 @@ function Index() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Got a wild startup idea, a hard ML problem, or want to collaborate on
-            something cool? Grab a slot on my calendar — I'd love to chat.
+            something cool?
+            <br className="hidden sm:block" />
+            Grab a slot on my calendar — I'd love to chat.
           </p>
           <a
             href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
