@@ -190,20 +190,6 @@ function Index() {
         <p className="max-w-2xl text-sm text-muted-foreground">
           Thoughts on machine learning, experimentation, growth, and decision-making.
         </p>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            "Prediction Is Not Decision-Making",
-            "What Subscription Businesses Can Learn From Experimentation",
-            "Lessons From Building Personalization Systems",
-          ].map((title) => (
-            <article key={title} className="flex h-full flex-col justify-between bg-card p-6">
-              <h3 className="text-base font-semibold text-foreground">{title}</h3>
-              <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Coming soon
-              </p>
-            </article>
-          ))}
-        </div>
       </Section>
 
       {/* CONTACT */}
