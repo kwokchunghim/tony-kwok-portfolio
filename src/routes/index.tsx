@@ -15,7 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     focus:
-      "Building machine learning systems that personalize subscription grace periods, replacing static rules with data-driven decisions to improve retention and net revenue.",
+      "Building machine learning systems to personalize subscription grace periods, improving retention and net revenue.",
     themes: ["Retention", "Customer understanding", "Subscriptions"],
   },
   {
@@ -23,7 +23,7 @@ const EXPERIENCE = [
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     focus:
-      "Customer LTV and profitable growth. Built an LTV prediction model for foundational customer understanding, and a contextual bandit for content optimization to drive ticketing conversion.",
+      "Worked on customer lifetime value modelling and profitable growth initiatives, including predictive modelling and contextual bandits for conversion optimization.",
     themes: ["Growth Systems", "Personalization", "Customer LTV"],
   },
   {
