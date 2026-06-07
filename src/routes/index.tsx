@@ -69,25 +69,6 @@ const INTERESTS = [
   },
 ];
 
-const WRITING = [
-  {
-    title: "Why Prediction and Decision-Making Are Different Problems",
-    description: "A high-accuracy model is not the same as a useful decision. Notes on bridging the gap.",
-  },
-  {
-    title: "What Subscription Businesses Can Learn From Experimentation",
-    description: "How experimentation discipline shapes pricing, retention, and lifecycle decisions.",
-  },
-  {
-    title: "Lessons From Building Personalization Systems",
-    description: "Practical notes on data, evaluation, and the realities of production personalization.",
-  },
-  {
-    title: "The Hidden Cost of Static Business Rules",
-    description: "When hard-coded thresholds outlive their assumptions, and what to do about it.",
-  },
-];
-
 function Index() {
   return (
     <div id="top" className="relative min-h-screen bg-background text-foreground">
@@ -206,28 +187,10 @@ function Index() {
 
       {/* WRITING */}
       <Section id="writing" eyebrow="Writing" title="Notes and essays.">
-        <p className="mb-8 max-w-2xl text-sm text-muted-foreground">
+        <p className="max-w-2xl text-sm text-muted-foreground">
           A space for thinking out loud about machine learning, experimentation, and
           decision-making in business. Essays coming soon.
         </p>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {WRITING.map((post) => (
-            <article
-              key={post.title}
-              className="group rounded-xl border border-border bg-card p-6 transition hover:border-foreground/30"
-            >
-              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                Draft
-              </span>
-              <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">
-                {post.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {post.description}
-              </p>
-            </article>
-          ))}
-        </div>
       </Section>
 
       {/* CONTACT */}
