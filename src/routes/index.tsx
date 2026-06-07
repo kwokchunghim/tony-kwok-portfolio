@@ -1,11 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowDown, Calendar, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
-import { NeuralBackground } from "@/components/portfolio/NeuralBackground";
 import { Section } from "@/components/portfolio/Section";
-import tonySpeaking from "@/assets/tony-speaking.jpg";
-import thisIsTonyK from "@/assets/this-is-tony-k.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,317 +13,246 @@ const EXPERIENCE = [
     role: "Machine Learning Engineer",
     company: "Spotify",
     period: "Nov 2025 – Present",
-    bullets: [
-      "Subscriptions R&D — User Understanding.",
-    ],
+    focus: "Subscriptions R&D — User Understanding.",
+    themes: ["Personalization", "Customer understanding", "Subscriptions"],
   },
   {
     role: "Machine Learning Engineer",
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
-    bullets: [
-      "Profitable Growth and Customer LTV.",
-    ],
+    focus: "Profitable Growth and Customer LTV.",
+    themes: ["Growth", "Retention", "Customer LTV"],
   },
   {
     role: "Machine Learning Engineer (Consultant)",
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
-    bullets: [
-      "Digital Twins for Gas Distribution Network.",
-    ],
+    focus: "Digital Twins for Gas Distribution Network.",
+    themes: ["Modeling", "Operational decisions"],
   },
   {
     role: "Research Assistant (Medical AI)",
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
-    bullets: [
-      "Image Classification for Orthopaedics.",
-    ],
+    focus: "Image Classification for Orthopaedics.",
+    themes: ["Applied research", "Image classification"],
   },
 ];
 
-const SKILLS: { label: string; items: string[] }[] = [
-  { label: "Languages", items: ["Python", "SQL", "Scala (Scio)", "Java"] },
-  { label: "ML Frameworks", items: ["PyTorch", "TensorFlow / TFX", "HuggingFace", "XGBoost", "Ray"] },
-  { label: "Data Platforms", items: ["GCP (BigQuery, Bigtable, Dataflow)", "AWS (Athena, EMR)", "Redis"] },
-  { label: "ML Platforms", items: ["Databricks", "Kubeflow", "MLflow", "Feast", "Vertex AI", "NVIDIA Triton"] },
-  { label: "DevOps / Infra", items: ["Flyte", "Airflow", "Jenkins", "Kubernetes", "Docker", "Terraform", "AWS ECS"] },
+const INTERESTS = [
+  {
+    title: "Personalization",
+    body: "Tailoring product experiences to individual customers using behavioural signals and machine learning.",
+  },
+  {
+    title: "Growth Systems",
+    body: "Models and pipelines that support acquisition, conversion, and lifetime value across the customer journey.",
+  },
+  {
+    title: "Experimentation",
+    body: "Designing and analysing A/B tests so product and business teams can make confident decisions.",
+  },
+  {
+    title: "Decision Intelligence",
+    body: "Connecting predictions to actions — turning model outputs into policies, thresholds, and business rules.",
+  },
+  {
+    title: "Causal Inference",
+    body: "Estimating real effects of interventions when randomised experiments aren't feasible or affordable.",
+  },
+  {
+    title: "Machine Learning Infrastructure",
+    body: "The pipelines, feature stores, and serving systems that let models reliably influence production decisions.",
+  },
+];
+
+const WRITING = [
+  {
+    title: "Why Prediction and Decision-Making Are Different Problems",
+    description: "A high-accuracy model is not the same as a useful decision. Notes on bridging the gap.",
+  },
+  {
+    title: "What Subscription Businesses Can Learn From Experimentation",
+    description: "How experimentation discipline shapes pricing, retention, and lifecycle decisions.",
+  },
+  {
+    title: "Lessons From Building Personalization Systems",
+    description: "Practical notes on data, evaluation, and the realities of production personalization.",
+  },
+  {
+    title: "The Hidden Cost of Static Business Rules",
+    description: "When hard-coded thresholds outlive their assumptions, and what to do about it.",
+  },
 ];
 
 function Index() {
   return (
-    <div id="top" className="relative min-h-screen overflow-x-clip">
+    <div id="top" className="relative min-h-screen bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-        <div
-          aria-hidden
-          className="absolute -top-32 left-1/2 -z-10 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
-          style={{ background: "var(--gradient-primary)" }}
-        />
-        <NeuralBackground />
-        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <div className="grid items-center gap-10 md:grid-cols-[1.2fr_1fr]">
+      <section className="relative pt-40 pb-24 sm:pt-48 sm:pb-32">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl"
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-              Tony Kwok
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5" /> London, UK
+            </div>
+            <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              Machine Learning Engineer focused on Growth, Personalization, and Decision Systems.
             </h1>
-            <p className="mt-4 text-xl font-medium text-gradient sm:text-2xl">
-              MLE by day, Builder by night
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              I build machine learning systems that help organizations better understand customers,
+              run experiments, and make data-informed decisions.
             </p>
-            <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              Machine Learning Engineer @ Spotify working on User Understanding
-              for the Subscriptions Mission. After hours, I tinker on side
-              projects exploring how AI is reshaping the world.
-            </p>
-
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
                 href="#experience"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
-                style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
+                className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition hover:bg-foreground/90"
               >
-                See what I've worked on
-                <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                View experience
+                <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
-                target="_top"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:border-primary/60 hover:text-primary"
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition hover:border-foreground/40"
               >
-                <Calendar className="h-4 w-4" /> Let's chat
-              </a>
-            </div>
-
-            <div className="mt-10 flex items-center gap-5 text-muted-foreground">
-              <a href="https://github.com/kwokchunghim" target="_blank" rel="noreferrer noopener" aria-label="GitHub" className="transition hover:text-primary">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com/in/tonykwokch" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" className="transition hover:text-primary">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="mailto:chkwok730@gmail.com" aria-label="Email" className="transition hover:text-primary">
-                <Mail className="h-5 w-5" />
+                Get in touch
               </a>
             </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-            className="relative hidden md:block"
-          >
-            <div
-              aria-hidden
-              className="absolute -inset-6 -z-10 rounded-[2rem] opacity-40 blur-2xl"
-              style={{ background: "var(--gradient-primary)" }}
-            />
-            <div className="overflow-hidden rounded-3xl border border-border/60 bg-card/40 shadow-2xl backdrop-blur">
-              <img
-                src={tonySpeaking}
-                alt="Tony Kwok speaking on a panel at Spotify Intro Days"
-                loading="eager"
-                className="aspect-square w-full object-cover"
-              />
-            </div>
-          </motion.div>
-          </div>
         </div>
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="About" title="Day job, night job.">
-        <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
-          <div className="glass rounded-2xl p-8 sm:p-10">
-            <p className="text-lg leading-relaxed text-foreground/90">
-              By day, I'm an MLE at <span className="text-primary font-medium">Spotify</span>,
-              working on personalization and user understanding to drive
-              conversion, revenue, and retention for the business. By night,
-              I build cool stuff.
-            </p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 text-primary" /> London, UK <span aria-hidden>🇬🇧</span>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/40 shadow-xl">
-            <img
-              src={thisIsTonyK}
-              alt="Spotify-style 'This Is Tony K' playlist cover"
-              loading="lazy"
-              className="aspect-square w-full object-cover"
-            />
-          </div>
+      <Section id="about" eyebrow="About" title="Background.">
+        <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
+          <p>I am a Machine Learning Engineer based in London.</p>
+          <p>
+            My experience spans personalization, customer understanding, experimentation,
+            retention, and growth. I've worked on production machine learning systems
+            and data products that influence customer experiences and business outcomes
+            at scale.
+          </p>
+          <p>
+            I studied Statistics at the University of Warwick and have a strong interest
+            in causal inference, optimization, and decision-making under uncertainty.
+          </p>
+          <p>
+            Outside of work, I enjoy exploring how experimentation, machine learning,
+            and decision systems can improve business outcomes.
+          </p>
         </div>
       </Section>
 
       {/* EXPERIENCE */}
-      <Section id="experience" eyebrow="Experience" title="Where I've shipped.">
-        <div className="relative pl-6 sm:pl-10">
-          <div
-            aria-hidden
-            className="absolute bottom-0 left-1.5 top-0 w-px sm:left-3"
-            style={{
-              background:
-                "linear-gradient(to bottom, transparent, var(--primary) 10%, var(--primary) 90%, transparent)",
-              opacity: 0.35,
-            }}
-          />
-          <div className="space-y-10">
-            {EXPERIENCE.map((job, i) => (
-              <motion.div
-                key={job.company}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-                className="relative"
-              >
-                <span
-                  aria-hidden
-                  className="absolute -left-[22px] top-2 grid h-3 w-3 place-items-center rounded-full sm:-left-[34px]"
-                  style={{ background: "var(--gradient-primary)", boxShadow: "0 0 16px var(--primary)" }}
-                />
-                <div className="glass rounded-2xl p-6 transition hover:border-primary/40 sm:p-7">
-                  <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <div>
-                      <h3 className="text-lg font-semibold">{job.role}</h3>
-                      <p className="text-primary">{job.company}</p>
-                    </div>
-                    <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      {job.period}
+      <Section id="experience" eyebrow="Experience" title="Selected roles.">
+        <div className="divide-y divide-border rounded-xl border border-border bg-card">
+          {EXPERIENCE.map((job) => (
+            <div key={job.company + job.period} className="grid gap-3 p-6 sm:grid-cols-[180px_1fr] sm:gap-8 sm:p-8">
+              <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                {job.period}
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-foreground sm:text-lg">{job.role}</h3>
+                <p className="mt-0.5 text-sm text-muted-foreground">{job.company}</p>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80 sm:text-base">{job.focus}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {job.themes.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-md border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground"
+                    >
+                      {t}
                     </span>
-                  </div>
-                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-foreground/80">
-                    {job.bullets.map((b, idx) => (
-                      <li key={idx} className="flex gap-3">
-                        <span aria-hidden className="mt-2 h-1 w-1 flex-none rounded-full bg-primary" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* SKILLS */}
-      <Section id="skills" eyebrow="Skills" title="The toolkit.">
-        <div className="grid gap-5 md:grid-cols-2">
-          {SKILLS.map((group) => (
-            <div key={group.label} className="glass rounded-2xl p-6">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary/90">
-                {group.label}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((s) => (
-                  <span
-                    key={s}
-                    className="cursor-default rounded-full border border-border bg-background/40 px-3 py-1.5 text-xs font-medium text-foreground/85 transition hover:border-primary/60 hover:text-primary hover:shadow-[0_0_24px_-6px_var(--primary)]"
-                  >
-                    {s}
-                  </span>
-                ))}
               </div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* PROJECTS */}
-      <Section id="projects" eyebrow="Projects" title="Selected work.">
-        <div className="border-gradient overflow-hidden rounded-2xl bg-card/60 p-8 backdrop-blur-xl">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-semibold tracking-tight">
-                Automatic Radiological Report Generation of Chest Radiographs using Deep Learning
-              </h3>
-              <p className="mt-1 text-sm text-primary">Apr 2023 – Sep 2023</p>
+      {/* INTERESTS */}
+      <Section id="interests" eyebrow="Areas of Interest" title="What I think about.">
+        <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {INTERESTS.map((item) => (
+            <div key={item.title} className="bg-card p-6">
+              <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
             </div>
-          </div>
-          <p className="mt-5 text-foreground/85">
-            Before OpenAI and Anthropic took over the field, I developed an image-to-text
-            chest X-ray reporting model and contributed to an ongoing initiative to automate
-            X-ray reporting with generative AI, led by Professor Giovanni Montana at the
-            University of Warwick. Awarded the MSc Statistics Best Dissertation Prize 2022/2023.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {["PyTorch", "Image-to-Text", "Medical AI", "Generative AI", "Best Dissertation Prize"].map((t) => (
-              <span key={t} className="rounded-full border border-border bg-background/40 px-3 py-1 text-xs text-muted-foreground">
-                {t}
+          ))}
+        </div>
+      </Section>
+
+      {/* WRITING */}
+      <Section id="writing" eyebrow="Writing" title="Notes and essays.">
+        <p className="mb-8 max-w-2xl text-sm text-muted-foreground">
+          A space for thinking out loud about machine learning, experimentation, and
+          decision-making in business. Essays coming soon.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {WRITING.map((post) => (
+            <article
+              key={post.title}
+              className="group rounded-xl border border-border bg-card p-6 transition hover:border-foreground/30"
+            >
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                Draft
               </span>
-            ))}
+              <h3 className="mt-3 text-base font-semibold leading-snug text-foreground">
+                {post.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {post.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* CONTACT */}
+      <Section id="contact" eyebrow="Contact" title="Get in touch.">
+        <div className="max-w-2xl">
+          <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+            I'm always happy to talk with operators, product and growth leaders, and other
+            engineers working on personalization, experimentation, and decision systems.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <a
+              href="mailto:chkwok730@gmail.com"
+              className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-foreground/40"
+            >
+              <Mail className="h-4 w-4" /> Email
+            </a>
+            <a
+              href="https://linkedin.com/in/tonykwokch"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-foreground/40"
+            >
+              <Linkedin className="h-4 w-4" /> LinkedIn
+            </a>
+            <a
+              href="https://github.com/kwokchunghim"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-foreground/40"
+            >
+              <Github className="h-4 w-4" /> GitHub
+            </a>
           </div>
         </div>
       </Section>
 
-      {/* EDUCATION */}
-      <Section id="education" eyebrow="Education" title="Foundations.">
-        <div className="grid gap-5 md:grid-cols-2">
-          <div className="glass rounded-2xl p-7">
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">2022 – 2023</p>
-            <h3 className="mt-2 text-lg font-semibold">MSc Statistics</h3>
-            <p className="text-primary">University of Warwick</p>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-              <li className="flex gap-3"><span aria-hidden className="mt-2 h-1 w-1 flex-none rounded-full bg-primary" />Distinction</li>
-              <li className="flex gap-3"><span aria-hidden className="mt-2 h-1 w-1 flex-none rounded-full bg-primary" />Winton Dissertation Prize Winner</li>
-            </ul>
-          </div>
-          <div className="glass rounded-2xl p-7">
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">2016 – 2020</p>
-            <h3 className="mt-2 text-lg font-semibold">BSc Mathematics (Honours)</h3>
-            <p className="text-primary">The Chinese University of Hong Kong</p>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-              <li className="flex gap-3"><span aria-hidden className="mt-2 h-1 w-1 flex-none rounded-full bg-primary" />Enrichment Mathematics Scholarship (top nationwide admits)</li>
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* CONTACT / FOOTER */}
-      <footer id="contact" className="relative scroll-mt-24 px-4 pb-16 pt-12 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Open to <span className="text-gradient">interesting problems</span>.
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Got a wild startup idea, a hard ML problem, or want to collaborate on
-            something cool?
-            <br className="hidden sm:block" />
-            Grab a slot on my calendar — I'd love to chat.
-          </p>
-          <a
-            href="https://calendar.app.google/pmdtLx8yLMk6tLeJ8"
-            target="_top"
-            rel="noreferrer noopener"
-            className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
-            style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}
-          >
-            <Calendar className="h-4 w-4" /> Schedule a chat
-          </a>
-          <div className="mt-10 flex items-center justify-center gap-6 text-muted-foreground">
-            <a href="https://github.com/kwokchunghim" target="_blank" rel="noreferrer noopener" aria-label="GitHub" className="transition hover:text-primary">
-              <Github className="h-5 w-5" />
-            </a>
-            <a href="https://linkedin.com/in/tonykwokch" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn" className="transition hover:text-primary">
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a href="mailto:chkwok730@gmail.com" aria-label="Email" className="transition hover:text-primary">
-              <Mail className="h-5 w-5" />
-            </a>
-          </div>
-          <p className="mt-10 text-xs text-muted-foreground/70">
-            © {new Date().getFullYear()} Tony Kwok
-          </p>
+      {/* FOOTER */}
+      <footer className="border-t border-border">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-4 py-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:px-6">
+          <p>© {new Date().getFullYear()} Tony Kwok</p>
+          <p>London, UK</p>
         </div>
       </footer>
     </div>
