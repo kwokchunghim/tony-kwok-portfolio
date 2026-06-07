@@ -31,7 +31,7 @@ const EXPERIENCE = [
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
     focus: "Digital Twins for Gas Distribution Network.",
-    themes: ["Modeling", "Operational decisions"],
+    themes: ["Property graphs", "Autoencoders"],
   },
   {
     role: "Research Assistant (Medical AI)",
