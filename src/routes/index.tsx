@@ -86,11 +86,11 @@ function Index() {
               <MapPin className="h-3.5 w-3.5" /> London, UK
             </div>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Machine Learning Engineer focused on Growth, Personalization, and Decision Systems.
+              Machine Learning Engineer focused on Growth, Personalization, and Business Decision-Making.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I build machine learning systems that help organizations better understand customers,
-              run experiments, and make data-informed decisions.
+              improve retention, run experiments, and make better decisions.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
@@ -188,17 +188,35 @@ function Index() {
       {/* WRITING */}
       <Section id="writing" eyebrow="Writing" title="Notes and essays.">
         <p className="max-w-2xl text-sm text-muted-foreground">
-          A space for thinking out loud about machine learning, experimentation, and
-          decision-making in business. Essays coming soon.
+          Thoughts on machine learning, experimentation, growth, and decision-making.
         </p>
+        <div className="mt-8 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            "Prediction Is Not Decision-Making",
+            "What Subscription Businesses Can Learn From Experimentation",
+            "Lessons From Building Personalization Systems",
+          ].map((title) => (
+            <article key={title} className="flex h-full flex-col justify-between bg-card p-6">
+              <h3 className="text-base font-semibold text-foreground">{title}</h3>
+              <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Coming soon
+              </p>
+            </article>
+          ))}
+        </div>
       </Section>
 
       {/* CONTACT */}
       <Section id="contact" eyebrow="Contact" title="Get in touch.">
         <div className="max-w-2xl">
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I'm always happy to talk with operators, product and growth leaders, and other
-            engineers working on personalization, experimentation, and decision systems.
+            I'm particularly interested in speaking with operators and leaders working on
+            retention, experimentation, lifecycle marketing, personalization, and customer
+            decision-making.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            If you're tackling these problems, I'd love to exchange ideas and learn how your
+            team approaches them.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             <a
