@@ -64,8 +64,8 @@
 :root {
   --radius: 0.625rem;
   /* Light, minimal — Stripe/Linear/Vercel inspired */
-  --background: oklch(0.995 0.002 250);
-  --background-deep: oklch(0.98 0.003 250);
+  --background: oklch(1 0 0);
+  --background-deep: oklch(1 0 0);
   --foreground: oklch(0.18 0.01 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.01 260);
@@ -74,9 +74,9 @@
   --primary: oklch(0.20 0.02 260);
   --primary-foreground: oklch(0.99 0 0);
   --primary-glow: oklch(0.30 0.02 260);
-  --secondary: oklch(0.96 0.005 250);
+  --secondary: oklch(0.98 0.003 250);
   --secondary-foreground: oklch(0.20 0.01 260);
-  --muted: oklch(0.96 0.005 250);
+  --muted: oklch(0.98 0.003 250);
   --muted-foreground: oklch(0.48 0.01 260);
   --accent: oklch(0.55 0.15 255);
   --accent-foreground: oklch(0.99 0 0);
