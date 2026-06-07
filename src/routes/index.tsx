@@ -13,14 +13,16 @@ const EXPERIENCE = [
     role: "Machine Learning Engineer",
     company: "Spotify",
     period: "Nov 2025 – Present",
-    focus: "Subscriptions R&D — User Understanding.",
+    focus:
+      "User understanding in Subscriptions R&D. Building ML-driven personalized grace periods to replace rule-based heuristics, improving retention and revenue together.",
     themes: ["Personalization", "Customer understanding", "Subscriptions"],
   },
   {
     role: "Machine Learning Engineer",
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
-    focus: "Profitable Growth and Customer LTV.",
+    focus:
+      "Customer LTV and profitable growth. Built an LTV prediction model for foundational customer understanding, and a contextual bandit for content optimization to drive ticketing conversion.",
     themes: ["Growth", "Retention", "Customer LTV"],
   },
   {
