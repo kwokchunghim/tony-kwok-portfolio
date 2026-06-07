@@ -141,7 +141,7 @@ function Index() {
           </p>
           <p>
             Outside of work, I enjoy exploring how experimentation, machine learning,
-            and decision systems can improve business outcomes.
+            and decision systems can drive better outcomes.
           </p>
         </div>
       </Section>
