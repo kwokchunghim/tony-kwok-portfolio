@@ -38,7 +38,7 @@ const EXPERIENCE = [
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
     focus: "Image Classification for Orthopaedics.",
-    themes: ["Applied research", "Image classification"],
+    themes: ["Convolutional Neural Networks (CNN)", "Medical imaging"],
   },
 ];
 
