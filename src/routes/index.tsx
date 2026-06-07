@@ -127,7 +127,7 @@ function Index() {
       {/* ABOUT */}
       <Section id="about" eyebrow="About" title="Background.">
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          <p>I am a Machine Learning Engineer based in London.</p>
+          <p>I am a Machine Learning Engineer at Spotify, currently based in London.</p>
           <p>
             My experience spans personalization, customer understanding, experimentation,
             retention, and growth. I've worked on production machine learning systems
