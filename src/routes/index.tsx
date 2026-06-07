@@ -24,7 +24,7 @@ const EXPERIENCE = [
     period: "Jun 2024 – Nov 2025",
     focus:
       "Customer LTV and profitable growth. Built an LTV prediction model for foundational customer understanding, and a contextual bandit for content optimization to drive ticketing conversion.",
-    themes: ["Business Growth", "Personalization", "Customer LTV"],
+    themes: ["Growth Systems", "Personalization", "Customer LTV"],
   },
   {
     role: "Machine Learning Engineer (Consultant)",
@@ -86,11 +86,11 @@ function Index() {
               <MapPin className="h-3.5 w-3.5" /> London, UK
             </div>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Machine Learning Engineer focused on Business Growth, Personalization, and Business Decision-Making.
+              Machine Learning Engineer focused on Growth Systems, Personalization, and Decision-Making.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I build machine learning systems that help organizations better understand customers,
-              improve retention, drive sustainable business growth, and make better decisions.
+              improve retention, drive sustainable growth, and make better decisions.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
@@ -141,7 +141,7 @@ function Index() {
           </p>
           <p>
             Outside of work, I enjoy exploring how experimentation, machine learning,
-            and decision systems can improve business outcomes.
+            and decision systems can drive better outcomes.
           </p>
         </div>
       </Section>
