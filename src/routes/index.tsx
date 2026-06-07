@@ -136,7 +136,8 @@ function Index() {
           </p>
           <p>
             I studied Statistics at the University of Warwick and have a strong interest
-            in causal inference, optimization, and decision-making under uncertainty.
+            in causal machine learning, constrained optimization, and Bayesian methods for
+            uncertainty quantification and decision-making.
           </p>
           <p>
             Outside of work, I enjoy exploring how experimentation, machine learning,
