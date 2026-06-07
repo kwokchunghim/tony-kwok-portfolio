@@ -15,7 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     focus:
-      "Building ML systems to personalize users' grace periods, improving subscriptions retention and net revenue.",
+      "Building machine learning systems that personalize subscription grace periods, replacing static rules with data-driven decisions to improve retention and net revenue.",
     themes: ["Retention", "Customer understanding", "Subscriptions"],
   },
   {
