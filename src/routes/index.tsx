@@ -127,6 +127,19 @@ function Index() {
               </a>
             </div>
           </motion.div>
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+            className="mt-16 overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+          >
+            <img
+              src={tonySpeaking}
+              alt="Tony Kwok speaking on stage"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+            />
+          </motion.figure>
         </div>
       </section>
 
