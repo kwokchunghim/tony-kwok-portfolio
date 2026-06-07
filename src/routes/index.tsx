@@ -24,7 +24,7 @@ const EXPERIENCE = [
     period: "Jun 2024 – Nov 2025",
     focus:
       "Customer LTV and profitable growth. Built an LTV prediction model for foundational customer understanding, and a contextual bandit for content optimization to drive ticketing conversion.",
-    themes: ["Growth", "Personalization", "Customer LTV"],
+    themes: ["Business Growth", "Personalization", "Customer LTV"],
   },
   {
     role: "Machine Learning Engineer (Consultant)",
