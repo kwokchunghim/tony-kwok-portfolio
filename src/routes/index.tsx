@@ -90,7 +90,7 @@ function Index() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I build machine learning systems that help organizations better understand customers,
-              improve retention, optimize growth, and make better decisions.
+              improve retention, increase customer lifetime value, and make better decisions.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
