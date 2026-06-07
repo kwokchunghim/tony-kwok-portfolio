@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Section } from "@/components/portfolio/Section";
+import tonySpeaking from "@/assets/tony-speaking.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
