@@ -15,7 +15,7 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     focus:
-      "User understanding in Subscriptions R&D. Building ML-driven personalized grace periods to replace rule-based heuristics, improving retention and revenue together.",
+      "Building ML systems to personalize users' grace periods, improving subscriptions retention and net revenue.",
     themes: ["Retention", "Customer understanding", "Subscriptions"],
   },
   {
@@ -189,6 +189,9 @@ function Index() {
       <Section id="writing" eyebrow="Writing" title="Notes and essays.">
         <p className="max-w-2xl text-sm text-muted-foreground">
           Thoughts on machine learning, experimentation, growth, and decision-making.
+        </p>
+        <p className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          Coming soon
         </p>
       </Section>
 
