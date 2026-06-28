@@ -210,7 +210,7 @@ function Index() {
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             <a
-              href="mailto:chkwok730@gmail.com"
+              href="mailto:contact@subcoreai.com"
               className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-foreground/40"
             >
               <Mail className="h-4 w-4" /> Email
