@@ -6,6 +6,24 @@ import { Section } from "@/components/portfolio/Section";
 import tonySpeaking from "@/assets/tony-speaking.jpg";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Tony Kwok — Machine Learning Engineer" },
+      {
+        name: "description",
+        content:
+          "Machine Learning Engineer in London working on personalization, experimentation, retention, and customer decision-making.",
+      },
+      { property: "og:title", content: "Tony Kwok — Machine Learning Engineer" },
+      {
+        property: "og:description",
+        content:
+          "Machine Learning Engineer in London working on personalization, experimentation, retention, and customer decision-making.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: Index,
 });
 
@@ -229,8 +247,8 @@ function Index() {
               <a
                 key={essay.title}
                 href={essay.href}
-                target="_top"
-                rel="noreferrer noopener"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block transition hover:bg-background/50"
               >
                 {content}
