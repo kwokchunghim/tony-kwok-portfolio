@@ -69,6 +69,17 @@ const INTERESTS = [
   },
 ];
 
+const ESSAYS = [
+  {
+    title: "When Models Become Commodities, Decisions Become the Job",
+    date: "Jul 2026",
+    excerpt:
+      "TabFMs and Kumo's RFMs are quietly automating feature engineering and model training. What's left for MLEs? Policy and decision-making.",
+    href: "https://www.linkedin.com/in/tonykwokch",
+    source: "LinkedIn",
+  },
+];
+
 function Index() {
   return (
     <div id="top" className="relative min-h-screen bg-background text-foreground">
@@ -191,9 +202,44 @@ function Index() {
         <p className="max-w-2xl text-sm text-muted-foreground">
           Thoughts on machine learning, experimentation, growth, and decision-making.
         </p>
-        <p className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-          Coming soon
-        </p>
+        <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card">
+          {ESSAYS.map((essay) => {
+            const content = (
+              <div className="grid gap-3 p-6 sm:grid-cols-[180px_1fr] sm:gap-8 sm:p-8">
+                <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  {essay.date}
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                    {essay.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/80 sm:text-base">
+                    {essay.excerpt}
+                  </p>
+                  {essay.href && (
+                    <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
+                      Read on {essay.source ?? "the web"}
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+            return essay.href ? (
+              <a
+                key={essay.title}
+                href={essay.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="block transition hover:bg-background/50"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={essay.title}>{content}</div>
+            );
+          })}
+        </div>
       </Section>
 
       {/* CONTACT */}
