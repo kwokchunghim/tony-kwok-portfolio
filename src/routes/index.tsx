@@ -75,7 +75,7 @@ const ESSAYS = [
     date: "Jul 2026",
     excerpt:
       "TabFMs and Kumo's RFMs are quietly automating feature engineering and model training. What's left for MLEs? Policy and decision-making.",
-    href: "https://www.linkedin.com/in/tonykwokch",
+    href: "https://www.linkedin.com/posts/tonykwokch_ive-been-learning-about-googles-tabfm-and-share-7487992050878009344-BgAj/",
     source: "LinkedIn",
   },
 ];
