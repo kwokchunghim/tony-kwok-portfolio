@@ -229,7 +229,7 @@ function Index() {
               <a
                 key={essay.title}
                 href={essay.href}
-                target="_blank"
+                target="_top"
                 rel="noreferrer noopener"
                 className="block transition hover:bg-background/50"
               >
