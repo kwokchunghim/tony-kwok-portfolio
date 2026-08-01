@@ -75,6 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Tony Kwok — Machine Learning Engineer" },
       { name: "description", content: "Tony Kwok is a Machine Learning Engineer based in London, building production ML systems at scale." },
       { name: "author", content: "Tony Kwok" },
+      { name: "google-site-verification", content: "79o0z1SjEJEAZQl_hHz92qdyj9qaUvAvI_Z8uBfUQmA" },
       { property: "og:title", content: "Tony Kwok — Machine Learning Engineer" },
       { property: "og:description", content: "Tony Kwok is a Machine Learning Engineer based in London, building production ML systems at scale." },
       { property: "og:type", content: "website" },
