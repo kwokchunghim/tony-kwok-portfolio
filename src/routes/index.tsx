@@ -89,6 +89,14 @@ const INTERESTS = [
 
 const ESSAYS = [
   {
+    title: "Why I'm Bullish on Relational Foundation Models",
+    date: "Aug 2026",
+    excerpt:
+      "Relational foundation models learn directly from the relational data businesses already have — no hand-built feature pipelines. Here's why that shifts the ML stack.",
+    href: "https://www.linkedin.com/posts/tonykwokch_im-bullish-on-relational-foundation-models-share-7489429166719709184-4zl0/",
+    source: "LinkedIn",
+  },
+  {
     title: "When Models Become Commodities, Decisions Become the Job",
     date: "Jul 2026",
     excerpt:
