@@ -34,7 +34,7 @@ export const POSTS: Post[] = [
       "I benchmarked zero-shot and continued-pretrained Relational Transformers against XGBoost and RelGT on two RelBench tasks — 18 hours on a 48GB Mac. One task was competitive; the other collapsed.",
     slug: "testing-an-open-relational-foundation-model",
     body: [
-      "Since I posted twice about relational foundation models (RFMs) and entity decision learning (EDL), quite a few friends have reached out with questions. So I've decided to write about this space more regularly — starting with experiments, not just papers.",
+      "Since I posted twice about relational foundation models (RFMs), quite a few friends have reached out with questions. So I've decided to write about this space more regularly — starting with experiments, not just papers.",
       { heading: "The benchmark" },
       "I built [Relagentship](https://github.com/kwokchunghim/relagentship/tree/agent/add-reltrial-benchmark), a small open-source benchmark comparing four approaches:",
       {
@@ -63,9 +63,11 @@ export const POSTS: Post[] = [
       { heading: "Why this rhymes with OpenRFM" },
       "However, the result rhymes closely with the diagnosis in the recent [OpenRFM paper](https://arxiv.org/abs/2606.04320). The authors argue that RT depends on labels encountered during its sampled relational walk. When too few label-bearing rows appear, its in-context support becomes sparse and prediction can collapse into something resembling underdetermined kernel regression. They also find that synthetic-only pretraining may remain in a \"lazy\" regime rather than learning genuinely useful relational features.",
       "Interestingly, study-outcome is one of the failure cases highlighted in that paper.",
-      { heading: "What this means for entity decision learning" },
-      "For EDL, this matters enormously. A model used to choose actions cannot merely work on average — we need to understand when its relational context contains enough evidence, when its pretraining assumptions transfer, and when a confident-looking metric hides collapse.",
+      { heading: "Why this matters" },
+      "A model used to choose actions cannot merely work on average — we need to understand when its relational context contains enough evidence, when its pretraining assumptions transfer, and when a confident-looking metric hides collapse.",
       "Next, I want to examine these failure modes directly: label coverage, neighbourhood composition, calibration, and whether OpenRFM's proposed fixes change the result.",
+      { heading: "Looking forward" },
+      "If RFMs eventually solve the prediction layer of enterprise ML the way LLMs solved much of NLP, I wonder whether policy decisioning becomes the next bottleneck for us MLEs to solve.",
       "All notebooks, predictions, configurations, and reproducibility checks are in the repo.",
     ],
   },
