@@ -6,7 +6,10 @@ export interface ExternalPost {
   source: string;
 }
 
-export type Block = string | { list: string[] };
+export type Block =
+  | string
+  | { list: string[] }
+  | { image: string; alt: string; caption?: string };
 
 export interface InternalPost {
   title: string;
@@ -40,7 +43,13 @@ export const POSTS: Post[] = [
           "RT continued-pretrained on other real databases",
         ],
       },
-      "RT is an ambitious idea: instead of engineering features or training a new model for every prediction task, it samples a neighbourhood around a target row by following database relationships, converts the connected cells into tokens, and predicts using examples found inside that context. The published [RT-PluRel checkpoint](https://huggingface.co/stanford-star/rt-plurel) can therefore attempt new tasks without updating its weights.",
+      "RT, introduced in [Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](https://arxiv.org/abs/2510.06377) (Ranjan et al., 2025), is an ambitious idea: instead of engineering features or training a new model for every prediction task, it samples a neighbourhood around a target row by following database relationships, converts the connected cells into tokens, and predicts using examples found inside that context. The published [RT-PluRel checkpoint](https://huggingface.co/stanford-star/rt-plurel) can therefore attempt new tasks without updating its weights.",
+      {
+        image: "RT_ARCHITECTURE",
+        alt: "Relational Transformer architecture: database schema and task schema, a sampled context window of cell tokens with in-context task labels, and transformer blocks with column, feature, neighbour and full attention feeding a per-datatype decoder.",
+        caption:
+          "How RT works: a sampled context window of cells from related tables is tokenised, then processed by relational attention layers that predict the masked target cell. Figure from Ranjan et al., \"Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data\" (arXiv:2510.06377).",
+      },
       "I tested it on two RelBench tasks. Both ran locally on a 48 GB Mac in roughly 18 hours.",
       "On Formula 1 driver-top3, continued-pretrained RT was competitive: 0.844 AUROC, compared with 0.855 for XGBoost and 0.804 for RelGT.",
       "But on the larger clinical-trial study-outcome task, the result changed sharply. Zero-shot RT achieved 0.515 AUROC — almost random ranking — and continued pretraining improved it only to 0.590. XGBoost and RelGT reached 0.718 and 0.699 respectively.",
