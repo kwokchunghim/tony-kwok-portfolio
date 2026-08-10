@@ -81,8 +81,8 @@ const INTERESTS = [
     body: "Estimating real effects of interventions when randomised experiments aren't feasible or affordable.",
   },
   {
-    title: "Machine Learning Infrastructure",
-    body: "The pipelines, feature stores, and serving systems that let models reliably influence production decisions.",
+    title: "Foundation Models for Enterprise ML",
+    body: "Relational foundation models and other enterprise FMs that predict directly from business data — and how to extend them from zero-shot predictions to zero-shot actions.",
   },
 ];
 
