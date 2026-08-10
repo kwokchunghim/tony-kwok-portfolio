@@ -61,7 +61,7 @@ function Shell({ children }: { children: React.ReactNode }) {
 }
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: InternalPost };
   return (
     <Shell>
       <article>
@@ -72,7 +72,7 @@ function PostPage() {
           {post.title}
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          {post.body.map((paragraph, i) => (
+          {post.body.map((paragraph: string, i: number) => (
             <p key={i}>{paragraph}</p>
           ))}
         </div>
