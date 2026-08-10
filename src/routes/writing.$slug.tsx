@@ -1,6 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { POSTS, isInternal, type InternalPost, type Block } from "@/lib/writing";
+import rtArchitecture from "@/assets/rt-architecture.png.asset.json";
+
+const IMAGES: Record<string, string> = {
+  RT_ARCHITECTURE: rtArchitecture.url,
+};
 
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
 
@@ -98,17 +103,33 @@ function PostPage() {
           {post.title}
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          {post.body.map((block: Block, i: number) =>
-            typeof block === "string" ? (
-              <p key={i}>{renderInline(block)}</p>
-            ) : (
-              <ul key={i} className="list-disc space-y-2 pl-5 marker:text-muted-foreground">
-                {block.list.map((item, j) => (
-                  <li key={j}>{renderInline(item)}</li>
-                ))}
-              </ul>
-            ),
-          )}
+          {post.body.map((block: Block, i: number) => {
+            if (typeof block === "string") return <p key={i}>{renderInline(block)}</p>;
+            if ("list" in block) {
+              return (
+                <ul key={i} className="list-disc space-y-2 pl-5 marker:text-muted-foreground">
+                  {block.list.map((item: string, j: number) => (
+                    <li key={j}>{renderInline(item)}</li>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <figure key={i} className="!mt-10 space-y-3">
+                <img
+                  src={IMAGES[block.image] ?? block.image}
+                  alt={block.alt}
+                  loading="lazy"
+                  className="w-full rounded-lg border border-border bg-card"
+                />
+                {block.caption ? (
+                  <figcaption className="text-sm leading-relaxed text-muted-foreground">
+                    {renderInline(block.caption)}
+                  </figcaption>
+                ) : null}
+              </figure>
+            );
+          })}
         </div>
       </article>
     </Shell>
