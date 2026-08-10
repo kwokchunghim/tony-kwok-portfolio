@@ -1,6 +1,32 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { POSTS, isInternal, type InternalPost } from "@/lib/writing";
+import { POSTS, isInternal, type InternalPost, type Block } from "@/lib/writing";
+
+const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+function renderInline(text: string) {
+  const nodes: React.ReactNode[] = [];
+  let last = 0;
+  let match: RegExpExecArray | null;
+  LINK_RE.lastIndex = 0;
+  while ((match = LINK_RE.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index));
+    nodes.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 decoration-border transition hover:decoration-foreground"
+      >
+        {match[1]}
+      </a>,
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
 
 export const Route = createFileRoute("/writing/$slug")({
   loader: ({ params }) => {
@@ -72,9 +98,17 @@ function PostPage() {
           {post.title}
         </h1>
         <div className="mt-8 space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          {post.body.map((paragraph: string, i: number) => (
-            <p key={i}>{paragraph}</p>
-          ))}
+          {post.body.map((block: Block, i: number) =>
+            typeof block === "string" ? (
+              <p key={i}>{renderInline(block)}</p>
+            ) : (
+              <ul key={i} className="list-disc space-y-2 pl-5 marker:text-muted-foreground">
+                {block.list.map((item, j) => (
+                  <li key={j}>{renderInline(item)}</li>
+                ))}
+              </ul>
+            ),
+          )}
         </div>
       </article>
     </Shell>

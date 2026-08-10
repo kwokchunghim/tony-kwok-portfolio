@@ -6,12 +6,14 @@ export interface ExternalPost {
   source: string;
 }
 
+export type Block = string | { list: string[] };
+
 export interface InternalPost {
   title: string;
   date: string;
   excerpt: string;
   slug: string;
-  body: string[];
+  body: Block[];
 }
 
 export type Post = ExternalPost | InternalPost;
@@ -22,16 +24,33 @@ export function isInternal(post: Post): post is InternalPost {
 
 export const POSTS: Post[] = [
   {
-    title: "Placeholder: What Personalization Owes the Business",
+    title: "Testing an Open Relational Foundation Model on My Laptop",
     date: "Aug 2026",
     excerpt:
-      "Placeholder excerpt — a short note on connecting personalization models to the metrics the business actually cares about.",
-    slug: "what-personalization-owes-the-business",
+      "I benchmarked zero-shot and continued-pretrained Relational Transformers against XGBoost and RelGT on two RelBench tasks — 18 hours on a 48GB Mac. One task was competitive; the other collapsed.",
+    slug: "testing-an-open-relational-foundation-model",
     body: [
-      "This is placeholder content for the first post written directly on this site. It will be replaced with the real essay.",
-      "Personalization systems are easy to justify in the abstract and hard to justify on a P&L. The gap is usually not modelling quality — it is the missing translation layer between a predicted propensity and a decision someone is willing to ship.",
-      "Placeholder paragraph: this section will cover how to define the decision, the constraint, and the counterfactual before any model is trained.",
-      "Placeholder paragraph: this section will cover measurement — what an experiment can and cannot tell you about a policy that adapts to the user it is measuring.",
+      "Since I posted twice about relational foundation models (RFMs) and entity decision learning (EDL), quite a few friends have reached out with questions. So I've decided to write about this space more regularly — starting with experiments, not just papers.",
+      "I built [Relagentship](https://github.com/kwokchunghim/relagentship/tree/agent/add-reltrial-benchmark), a small open-source benchmark comparing four approaches:",
+      {
+        list: [
+          "XGBoost with relational features",
+          "Task-trained RelGT",
+          "Zero-shot Relational Transformer (RT)",
+          "RT continued-pretrained on other real databases",
+        ],
+      },
+      "RT is an ambitious idea: instead of engineering features or training a new model for every prediction task, it samples a neighbourhood around a target row by following database relationships, converts the connected cells into tokens, and predicts using examples found inside that context. The published [RT-PluRel checkpoint](https://huggingface.co/stanford-star/rt-plurel) can therefore attempt new tasks without updating its weights.",
+      "I tested it on two RelBench tasks. Both ran locally on a 48 GB Mac in roughly 18 hours.",
+      "On Formula 1 driver-top3, continued-pretrained RT was competitive: 0.844 AUROC, compared with 0.855 for XGBoost and 0.804 for RelGT.",
+      "But on the larger clinical-trial study-outcome task, the result changed sharply. Zero-shot RT achieved 0.515 AUROC — almost random ranking — and continued pretraining improved it only to 0.590. XGBoost and RelGT reached 0.718 and 0.699 respectively.",
+      "More strikingly, at its validation-selected threshold, zero-shot RT predicted the positive class for every test row. Its apparently respectable F1 score therefore concealed a serious failure mode.",
+      "This does not prove that RT is fundamentally broken. The comparison is not apples-to-apples: XGBoost and RelGT receive task-specific training, while RT uses published checkpoints. These are also fixed-seed local experiments.",
+      "However, the result rhymes closely with the diagnosis in the recent [OpenRFM paper](https://arxiv.org/abs/2606.04320). The authors argue that RT depends on labels encountered during its sampled relational walk. When too few label-bearing rows appear, its in-context support becomes sparse and prediction can collapse into something resembling underdetermined kernel regression. They also find that synthetic-only pretraining may remain in a \"lazy\" regime rather than learning genuinely useful relational features.",
+      "Interestingly, study-outcome is one of the failure cases highlighted in that paper.",
+      "For EDL, this matters enormously. A model used to choose actions cannot merely work on average — we need to understand when its relational context contains enough evidence, when its pretraining assumptions transfer, and when a confident-looking metric hides collapse.",
+      "Next, I want to examine these failure modes directly: label coverage, neighbourhood composition, calibration, and whether OpenRFM's proposed fixes change the result.",
+      "All notebooks, predictions, configurations, and reproducibility checks are in the repo.",
     ],
   },
   {
