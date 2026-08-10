@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Section } from "@/components/portfolio/Section";
+import { POSTS, isInternal } from "@/lib/writing";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,25 +84,6 @@ const INTERESTS = [
   {
     title: "Foundation Models for Enterprise ML",
     body: "Relational foundation models and other enterprise FMs that predict directly from business data — and how to extend them from zero-shot predictions to zero-shot actions.",
-  },
-];
-
-const ESSAYS = [
-  {
-    title: "Why I'm Bullish on Relational Foundation Models",
-    date: "Aug 2026",
-    excerpt:
-      "Relational foundation models learn directly from the relational data businesses already have — no hand-built feature pipelines. Here's why that shifts the ML stack.",
-    href: "https://www.linkedin.com/posts/tonykwokch_im-bullish-on-relational-foundation-models-share-7489429166719709184-4zl0/",
-    source: "LinkedIn",
-  },
-  {
-    title: "When Models Become Commodities, Decisions Become the Job",
-    date: "Jul 2026",
-    excerpt:
-      "TabFMs and Kumo's RFMs are quietly automating feature engineering and model training. What's left for MLEs? Policy and decision-making.",
-    href: "https://www.linkedin.com/posts/tonykwokch_ive-been-learning-about-googles-tabfm-and-share-7487992050878009344-BgAj/",
-    source: "LinkedIn",
   },
 ];
 
