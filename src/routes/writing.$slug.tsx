@@ -114,6 +114,16 @@ function PostPage() {
                 </ul>
               );
             }
+            if ("heading" in block) {
+              return (
+                <h2
+                  key={i}
+                  className="!mt-12 text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+                >
+                  {block.heading}
+                </h2>
+              );
+            }
             return (
               <figure key={i} className="!mt-10 space-y-3">
                 <img
