@@ -197,7 +197,7 @@ function Index() {
           Thoughts on machine learning, experimentation, growth, and decision-making.
         </p>
         <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card">
-          {ESSAYS.map((essay) => {
+          {POSTS.map((essay) => {
             const content = (
               <div className="grid gap-3 p-6 sm:grid-cols-[180px_1fr] sm:gap-8 sm:p-8">
                 <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -210,16 +210,23 @@ function Index() {
                   <p className="mt-3 text-sm leading-relaxed text-foreground/80 sm:text-base">
                     {essay.excerpt}
                   </p>
-                  {essay.href && (
-                    <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
-                      Read on {essay.source ?? "the web"}
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
-                  )}
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
+                    {isInternal(essay) ? "Read post" : `Read on ${essay.source}`}
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
                 </div>
               </div>
             );
-            return essay.href ? (
+            return isInternal(essay) ? (
+              <Link
+                key={essay.slug}
+                to="/writing/$slug"
+                params={{ slug: essay.slug }}
+                className="block transition hover:bg-background/50"
+              >
+                {content}
+              </Link>
+            ) : (
               <a
                 key={essay.title}
                 href={essay.href}
@@ -229,8 +236,6 @@ function Index() {
               >
                 {content}
               </a>
-            ) : (
-              <div key={essay.title}>{content}</div>
             );
           })}
         </div>
