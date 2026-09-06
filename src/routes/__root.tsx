@@ -80,11 +80,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Tony Kwok is a Machine Learning Engineer based in London, building production ML systems at scale." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Tony Kwok — Machine Learning Engineer" },
       { name: "twitter:description", content: "Tony Kwok is a Machine Learning Engineer based in London, building production ML systems at scale." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc6eec38-7cb8-4e78-8fe4-0679879b5c77/id-preview-f5f1288b--b99d9c95-b72e-47b0-9511-8ef6464bc2e7.lovable.app-1778534073355.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bc6eec38-7cb8-4e78-8fe4-0679879b5c77/id-preview-f5f1288b--b99d9c95-b72e-47b0-9511-8ef6464bc2e7.lovable.app-1778534073355.png" },
     ],
     links: [
       {

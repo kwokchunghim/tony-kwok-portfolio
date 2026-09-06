@@ -21,7 +21,15 @@ export const Route = createFileRoute("/")({
           "Machine Learning Engineer in London working on personalization, experimentation, retention, and customer decision-making.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "https://tonykwokch.com/social-preview.png?v=2" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Tony Kwok — Machine Learning Engineer" },
+      {
+        name: "twitter:description",
+        content:
+          "Machine Learning Engineer in London working on personalization, experimentation, retention, and customer decision-making.",
+      },
+      { name: "twitter:image", content: "https://tonykwokch.com/social-preview.png?v=2" },
     ],
   }),
   component: Index,
