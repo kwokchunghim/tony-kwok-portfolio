@@ -60,6 +60,7 @@ export const Route = createFileRoute("/writing/$slug")({
     }
     const { post } = loaderData as { post: InternalPost };
     const title = `${post.title} — Tony Kwok`;
+    const socialImage = "https://tonykwokch.com/social-preview.png?v=2";
     return {
       meta: [
         { title },
@@ -67,7 +68,11 @@ export const Route = createFileRoute("/writing/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: post.excerpt },
         { property: "og:type", content: "article" },
-        { name: "twitter:card", content: "summary" },
+        { property: "og:image", content: socialImage },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: post.excerpt },
+        { name: "twitter:image", content: socialImage },
       ],
     };
   },
