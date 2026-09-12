@@ -2,31 +2,41 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { POSTS, isInternal, type InternalPost, type Block } from "@/lib/writing";
 import rtArchitecture from "@/assets/rt-architecture.png.asset.json";
+import semanticIdsRqVae from "@/assets/semantic-ids-rq-vae.png.asset.json";
+import semanticIdsCategories from "@/assets/semantic-ids-category-distributions.png.asset.json";
 
 const IMAGES: Record<string, string> = {
   RT_ARCHITECTURE: rtArchitecture.url,
+  SEMANTIC_IDS_RQ_VAE: semanticIdsRqVae.url,
+  SEMANTIC_IDS_CATEGORIES: semanticIdsCategories.url,
 };
 
-const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+const INLINE_RE = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
 
 function renderInline(text: string) {
   const nodes: React.ReactNode[] = [];
   let last = 0;
   let match: RegExpExecArray | null;
-  LINK_RE.lastIndex = 0;
-  while ((match = LINK_RE.exec(text)) !== null) {
+  INLINE_RE.lastIndex = 0;
+  while ((match = INLINE_RE.exec(text)) !== null) {
     if (match.index > last) nodes.push(text.slice(last, match.index));
-    nodes.push(
-      <a
-        key={match.index}
-        href={match[2]}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline underline-offset-4 decoration-border transition hover:decoration-foreground"
-      >
-        {match[1]}
-      </a>,
-    );
+    if (match[1] && match[2]) {
+      nodes.push(
+        <a
+          key={match.index}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 decoration-border transition hover:decoration-foreground"
+        >
+          {match[1]}
+        </a>,
+      );
+    } else if (match[3]) {
+      nodes.push(<strong key={match.index} className="font-semibold text-foreground">{match[3]}</strong>);
+    } else if (match[4]) {
+      nodes.push(<em key={match.index}>{match[4]}</em>);
+    }
     last = match.index + match[0].length;
   }
   if (last < text.length) nodes.push(text.slice(last));
