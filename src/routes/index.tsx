@@ -41,30 +41,32 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     focus:
-      "Building machine learning systems to personalize subscription grace periods, improving retention and net revenue.",
-    themes: ["Retention", "Customer understanding", "Subscriptions"],
+      "Leading the development of personalised subscription grace-period decisioning, from heuristic rules towards predictive and causal ML. Building supporting inference services and tooling for policy evaluation and experimentation.",
+    themes: ["Personalisation", "Causal ML", "Production ML"],
   },
   {
     role: "Machine Learning Engineer",
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     focus:
-      "Worked on customer lifetime value modelling and profitable growth initiatives, including predictive modelling and contextual bandits for conversion optimization.",
-    themes: ["Growth Systems", "Personalization", "Customer LTV"],
+      "Worked on customer lifetime value prediction and contextual bandits for personalised content, supporting conversion optimisation and profitable growth.",
+    themes: ["ML Systems", "Contextual bandits", "Personalisation"],
   },
   {
     role: "Machine Learning Engineer (Consultant)",
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
-    focus: "Digital Twins for Gas Distribution Network.",
-    themes: ["Property graphs", "Autoencoders"],
+    focus:
+      "Worked on digital twins for gas distribution networks, using property graphs and autoencoder-based synthetic data generation.",
+    themes: ["Temporal heterogeneous graphs", "Autoencoders"],
   },
   {
     role: "Research Assistant (Medical AI)",
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
-    focus: "Image Classification for Orthopaedics.",
-    themes: ["Convolutional Neural Networks (CNN)", "Medical imaging"],
+    focus:
+      "Worked on convolutional neural networks for orthopaedic medical-image classification.",
+    themes: ["Deep learning", "Medical imaging"],
   },
 ];
 
@@ -112,11 +114,10 @@ function Index() {
               <MapPin className="h-3.5 w-3.5" /> London, UK
             </div>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Machine Learning Engineer focused on Personalization, Experimentation, and Business Decision-Making.
+              Machine learning for user understanding and personalisation.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              I build machine learning systems that help organizations better understand customers,
-              improve retention, increase customer lifetime value, and make better decisions.
+              I'm Tony, a Machine Learning Engineer at Spotify in London. I build models and production ML systems that learn from user behaviour and optimise user journeys. I also write about recommender systems and foundation models for structured data.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
@@ -140,21 +141,17 @@ function Index() {
       {/* ABOUT */}
       <Section id="about" eyebrow="About" title="Background.">
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          <p>I am a Machine Learning Engineer at Spotify, currently based in London.</p>
           <p>
-            My experience spans personalization, customer understanding, experimentation,
-            retention, and growth. I've worked on production machine learning systems
-            and data products that influence customer experiences and business outcomes
-            at scale.
+            My work spans modelling, experimentation and the engineering needed to put ML into production. At Spotify, I work on personalising subscription experiences, connecting predictions to decisions and evaluating their impact through experiments.
           </p>
           <p>
-            I studied Statistics at the University of Warwick and have a strong interest
-            in causal machine learning, constrained optimization, and decision-making under
-            uncertainty.
+            I'm particularly interested in how models learn useful representations of people and structured data. Recently, I've been exploring generative recommenders, tabular and relational foundation models, and how these approaches connect to practical decision-making.
           </p>
           <p>
-            Outside of work, I enjoy exploring how experimentation, machine learning,
-            and decision systems can drive better outcomes.
+            I studied Mathematics at the Chinese University of Hong Kong and Statistics at the University of Warwick, where my dissertation explored vision-language models for chest X-ray report generation.
+          </p>
+          <p>
+            Away from work, I enjoy singing, badminton and playing music.
           </p>
         </div>
       </Section>
