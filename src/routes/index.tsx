@@ -41,30 +41,32 @@ const EXPERIENCE = [
     company: "Spotify",
     period: "Nov 2025 – Present",
     focus:
-      "Building machine learning systems to personalize subscription grace periods, improving retention and net revenue.",
-    themes: ["Retention", "Customer understanding", "Subscriptions"],
+      "Leading the development of personalised subscription grace-period decisioning, from heuristic rules towards predictive and causal ML. Building supporting inference services and tooling for policy evaluation and experimentation.",
+    themes: ["Personalisation", "Causal ML", "Production ML"],
   },
   {
     role: "Machine Learning Engineer",
     company: "Trainline",
     period: "Jun 2024 – Nov 2025",
     focus:
-      "Worked on customer lifetime value modelling and profitable growth initiatives, including predictive modelling and contextual bandits for conversion optimization.",
-    themes: ["Growth Systems", "Personalization", "Customer LTV"],
+      "Worked on customer lifetime value prediction and contextual bandits for personalised content, supporting conversion optimisation and profitable growth.",
+    themes: ["ML Systems", "Contextual bandits", "Personalisation"],
   },
   {
     role: "Machine Learning Engineer (Consultant)",
     company: "Guidehouse",
     period: "Aug 2023 – May 2024",
-    focus: "Digital Twins for Gas Distribution Network.",
-    themes: ["Property graphs", "Autoencoders"],
+    focus:
+      "Worked on digital twins for gas distribution networks, using property graphs and autoencoder-based synthetic data generation.",
+    themes: ["Temporal heterogeneous graphs", "Autoencoders"],
   },
   {
     role: "Research Assistant (Medical AI)",
     company: "Dept. of Medicine, University of Hong Kong",
     period: "Aug 2021 – May 2022",
-    focus: "Image Classification for Orthopaedics.",
-    themes: ["Convolutional Neural Networks (CNN)", "Medical imaging"],
+    focus:
+      "Worked on convolutional neural networks for orthopaedic medical-image classification.",
+    themes: ["Deep learning", "Medical imaging"],
   },
 ];
 
