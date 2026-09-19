@@ -28,6 +28,64 @@ export function isInternal(post: Post): post is InternalPost {
 
 export const POSTS: Post[] = [
   {
+    title: "How an LLM Becomes a Personalised Recommender",
+    date: "Sep 2026",
+    excerpt:
+      "How Spotify's GLIDE turns an LLM into a personalised recommender — semantic IDs, soft prompts, and why users don't need their own codes.",
+    slug: "how-an-llm-becomes-a-personalised-recommender",
+    body: [
+      "In my [last post](https://tonykwokch.com/writing/semantic-ids-and-how-to-train-them), I explored semantic IDs: short token sequences that let a model spell out the item it wants to recommend.",
+      "But how does the model learn what those codes mean? And how does it decide which item to recommend to you?",
+      "I've been reading further into [Spotify's GLIDE paper](https://arxiv.org/abs/2603.17540), particularly its training process and how it brings user preferences into an LLM.",
+      { heading: "How does the model learn about an item?" },
+      "Imagine a newly published podcast episode with no listening history. Its title and description provide information about its content, from which we can construct a semantic ID using existing code tokens. This gives us a representation without waiting for people to listen—a useful starting point for cold start.",
+      "The next step is connecting those codes to language the LLM understands.",
+      "GLIDE does this through two training tasks. For an illustrative episode:",
+      {
+        list: [
+          '**Description → ID:** Given "An interview about black holes," generate the episode\'s semantic ID.',
+          '**ID → description:** Given that semantic ID, generate a description of the episode.',
+        ],
+      },
+      "It first trains the new SID embeddings with the transformer frozen, then adapts through [LoRA](https://arxiv.org/abs/2106.09685), which learns small weight updates while keeping the original weights fixed. This staged approach helps preserve language capabilities and reduce the risk of catastrophic forgetting. [GLIDE, §4.2](https://arxiv.org/html/2603.17540#S4.SS2)",
+      {
+        image: "GLIDE_TRAINING_PIPELINE",
+        alt: "GLIDE training pipeline: vocabulary expansion with SID tokens, two-phase training grounding the model to speak SIDs, then adding a soft prompt user vector for personalization.",
+        caption:
+          "Figure 1. GLIDE training pipeline. Source: D'Amico et al. (2026).",
+      },
+      { heading: "From understanding an episode to recommending it" },
+      "Next comes instruction tuning. GLIDE learns to generate episode IDs from user context, recent listening history and a recommendation directive. [GLIDE, §4.3](https://arxiv.org/html/2603.17540#S4.SS3)",
+      "Why include a directive? Different product experiences need different recommendations. One might help listeners return to familiar shows; another might encourage them to discover something new. Making the objective explicit lets the model distinguish those requests.",
+      {
+        image: "GLIDE_RECOMMENDATION_PROMPT",
+        alt: "GLIDE prompt structure showing system instruction, user context with soft prompt vector and textual metadata, interaction history of episode SIDs, and a task instruction for familiarity-mode recommendation.",
+        caption:
+          "Figure 2. Structure of the GLIDE prompt. Source: D'Amico et al. (2026).",
+      },
+      { heading: "Where personalisation enters" },
+      "The part that caught my attention is how the user is represented.",
+      "GLIDE takes an existing user embedding and passes it through a two-layer neural network to match the LLM's hidden dimension. The resulting vector occupies one input position after the system instruction. The projection is trained jointly with the LLM during instruction tuning. [GLIDE, §4.1.2](https://arxiv.org/html/2603.17540#S4.SS1.SSS2) and [§4.3](https://arxiv.org/html/2603.17540#S4.SS3)",
+      "This is a user *soft prompt*.",
+      "We normally interact with LLMs through text, but text tokens are converted into vectors before the transformer processes them. A soft prompt supplies a vector directly at that level. Recommendation training teaches the model how to use it.",
+      "That means we can reuse a representation learned from listening behaviour without first translating it into a written profile. The same model serves different listeners; their input vectors provide the personalisation.",
+      { heading: "Why not give users semantic IDs too?" },
+      "This connects to a question I raised in my previous post: could we quantise user embeddings into semantic IDs as well? And what do we gain by quantising an embedding in the first place?",
+      "For me, the clearest reason is what we need the model to output.",
+      "An LLM's standard output head predicts discrete tokens. Semantic IDs give it a compact way to identify items through combinations of reusable codes, rather than a separate output token for every item. Similar items can also share parts of their representation.",
+      "We lose some precision through quantisation, but gain an identifier the model can generate and we can map back to catalogue items.",
+      "User embeddings have a different job: they condition the recommendation. We don't need the model to generate a user identifier, so we can supply a continuous vector directly. Quantising it would need to offer a benefit that justifies the information loss.",
+      "Semantic IDs also represent listening history on the input side. Their usefulness isn't limited to outputs, but generating item identifiers is a particularly strong reason to use them.",
+      { heading: "What I'd like to explore next" },
+      "GLIDE also makes me think about tabular foundation models. If a pretrained LLM can learn to use text, semantic IDs and dense vectors together, could we adapt it for tabular prediction using a similar mix of inputs?",
+      "We could combine numerical and categorical embeddings with column descriptions and a task instruction, giving the model both the data and context about what it means. I'm curious whether language pretraining would help it transfer to unfamiliar datasets—or whether a purpose-built tabular model would still do the job better.",
+      "*This is an independent exploration of publicly available research, written in a personal capacity. It is not endorsed by Spotify and does not represent Spotify's views.*",
+      { heading: "References" },
+      "D'Amico et al. (2026). [Deploying Semantic ID-based Generative Retrieval for Large-Scale Podcast Discovery at Spotify](https://arxiv.org/abs/2603.17540).",
+      "Hu et al. (2021). [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685).",
+    ],
+  },
+  {
     title: "Semantic IDs—and How to Train Them",
     date: "Sep 2026",
     excerpt:

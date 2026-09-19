@@ -4,11 +4,15 @@ import { POSTS, isInternal, type InternalPost, type Block } from "@/lib/writing"
 import rtArchitecture from "@/assets/rt-architecture.png.asset.json";
 import semanticIdsRqVae from "@/assets/semantic-ids-rq-vae.png.asset.json";
 import semanticIdsCategories from "@/assets/semantic-ids-category-distributions.png.asset.json";
+import glideTrainingPipeline from "@/assets/glide-training-pipeline.png.asset.json";
+import glideRecommendationPrompt from "@/assets/glide-recommendation-prompt.png.asset.json";
 
 const IMAGES: Record<string, string> = {
   RT_ARCHITECTURE: rtArchitecture.url,
   SEMANTIC_IDS_RQ_VAE: semanticIdsRqVae.url,
   SEMANTIC_IDS_CATEGORIES: semanticIdsCategories.url,
+  GLIDE_TRAINING_PIPELINE: glideTrainingPipeline.url,
+  GLIDE_RECOMMENDATION_PROMPT: glideRecommendationPrompt.url,
 };
 
 const INLINE_RE = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
