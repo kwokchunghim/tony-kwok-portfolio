@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
@@ -133,13 +134,21 @@ function TrackRow({ track, index }: { track: SpotifyTrack; index: number }) {
   );
 }
 
+const TIME_RANGES = [
+  { label: "1 month", value: "short_term" as const },
+  { label: "3 months", value: "medium_term" as const },
+  { label: "6 months", value: "long_term" as const },
+];
+
 function SpotifyListening() {
   const fetchTop = useServerFn(getTopTracks);
   const fetchRecent = useServerFn(getRecentlyPlayed);
 
+  const [timeRange, setTimeRange] = useState<"short_term" | "medium_term" | "long_term">("medium_term");
+
   const topQuery = useQuery({
-    queryKey: ["spotify-top"],
-    queryFn: () => fetchTop(),
+    queryKey: ["spotify-top", timeRange],
+    queryFn: () => fetchTop({ data: { timeRange } }),
     staleTime: 1000 * 60 * 5,
   });
   const recentQuery = useQuery({
@@ -152,8 +161,24 @@ function SpotifyListening() {
     <div className="grid gap-6 sm:grid-cols-2">
       {/* Top tracks */}
       <div className="rounded-xl border border-border bg-card p-5">
-        <h3 className="mb-1 text-sm font-semibold text-foreground">Top Tracks</h3>
-        <p className="mb-4 text-xs text-muted-foreground">Last 3 months</p>
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-sm font-semibold text-foreground">Top Tracks</h3>
+          <div className="flex gap-1">
+            {TIME_RANGES.map((r) => (
+              <button
+                key={r.value}
+                onClick={() => setTimeRange(r.value)}
+                className={`rounded-md px-2 py-1 text-xs transition ${
+                  timeRange === r.value
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-accent"
+                }`}
+              >
+                {r.label}
+              </button>
+            ))}
+          </div>
+        </div>
         {topQuery.isLoading ? (
           <div className="space-y-3">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -209,7 +234,7 @@ function SpotifyListening() {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
       >
-        <Music2 className="h-4 w-4" /> Listen with me on Spotify
+        <Music2 className="h-4 w-4" /> My Spotify profile
       </a>
     </div>
   );

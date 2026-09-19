@@ -64,10 +64,15 @@ export interface SpotifyTrack {
   playedAt?: string;
 }
 
-export async function fetchTopTracks(limit = 5): Promise<SpotifyTrack[]> {
+export type SpotifyTimeRange = "short_term" | "medium_term" | "long_term";
+
+export async function fetchTopTracks(
+  limit = 5,
+  timeRange: SpotifyTimeRange = "medium_term",
+): Promise<SpotifyTrack[]> {
   const token = await refreshSpotifyAccessToken();
   const res = await fetch(
-    `https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=medium_term`,
+    `https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=${timeRange}`,
     { headers: { Authorization: `Bearer ${token}` } },
   );
   if (!res.ok) {
