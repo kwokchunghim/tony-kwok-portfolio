@@ -67,7 +67,7 @@ export interface SpotifyTrack {
 export async function fetchTopTracks(limit = 5): Promise<SpotifyTrack[]> {
   const token = await refreshSpotifyAccessToken();
   const res = await fetch(
-    `https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=short_term`,
+    `https://api.spotify.com/v1/me/top/tracks?limit=${limit}&time_range=medium_term`,
     { headers: { Authorization: `Bearer ${token}` } },
   );
   if (!res.ok) {

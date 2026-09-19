@@ -152,8 +152,18 @@ function SpotifyListening() {
     <div className="grid gap-6 sm:grid-cols-2">
       {/* Top tracks */}
       <div className="rounded-xl border border-border bg-card p-5">
-        <h3 className="mb-1 text-sm font-semibold text-foreground">Top Tracks</h3>
-        <p className="mb-4 text-xs text-muted-foreground">Last 4 weeks</p>
+        <div className="mb-1 flex items-center justify-between">
+          <h3 className="text-sm font-semibold text-foreground">Top Tracks</h3>
+          <a
+            href="https://open.spotify.com/user/31hxmf42aaupgkgzoiwfbr7inb7m"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs text-muted-foreground transition hover:text-foreground"
+          >
+            <Music2 className="h-3.5 w-3.5" /> Profile
+          </a>
+        </div>
+        <p className="mb-4 text-xs text-muted-foreground">Last 3 months</p>
         {topQuery.isLoading ? (
           <div className="space-y-3">
             {Array.from({ length: 5 }).map((_, i) => (
