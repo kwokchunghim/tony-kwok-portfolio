@@ -135,6 +135,7 @@ function TrackRow({ track, index }: { track: SpotifyTrack; index: number }) {
 }
 
 const TIME_RANGES = [
+  { label: "1 week", value: "short_term" as const },
   { label: "1 month", value: "short_term" as const },
   { label: "3 months", value: "medium_term" as const },
   { label: "6 months", value: "long_term" as const },
@@ -390,7 +391,7 @@ function Index() {
       </Section>
 
       {/* SPOTIFY */}
-      <Section id="listening" eyebrow="Now Playing" title="What I'm listening to.">
+      <Section id="listening" eyebrow="Now Playing" title="What I'm listening to on Spotify.">
         <SpotifyListening />
       </Section>
 
