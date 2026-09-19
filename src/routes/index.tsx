@@ -1,9 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Music2 } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Section } from "@/components/portfolio/Section";
 import { POSTS, isInternal } from "@/lib/writing";
+import { getTopTracks } from "@/lib/spotify.functions";
+import { getRecentlyPlayed } from "@/lib/spotify.functions";
+import type { SpotifyTrack } from "@/lib/spotify.server";
 
 export const Route = createFileRoute("/")({
   head: () => ({
