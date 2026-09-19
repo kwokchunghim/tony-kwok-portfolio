@@ -251,6 +251,11 @@ function Index() {
         </div>
       </Section>
 
+      {/* SPOTIFY */}
+      <Section id="listening" eyebrow="Now Playing" title="What I'm listening to.">
+        <SpotifyListening />
+      </Section>
+
       {/* CONTACT */}
       <Section id="contact" eyebrow="Contact" title="Get in touch.">
         <div className="max-w-2xl">
