@@ -114,11 +114,10 @@ function Index() {
               <MapPin className="h-3.5 w-3.5" /> London, UK
             </div>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Machine Learning Engineer focused on Personalization, Experimentation, and Business Decision-Making.
+              Machine learning for user understanding and personalisation.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-              I build machine learning systems that help organizations better understand customers,
-              improve retention, increase customer lifetime value, and make better decisions.
+              I'm Tony, a Machine Learning Engineer at Spotify in London. I build models and production ML systems that learn from user behaviour and optimise user journeys. I also write about recommender systems and foundation models for structured data.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
