@@ -1,9 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Music2 } from "lucide-react";
 import { Nav } from "@/components/portfolio/Nav";
 import { Section } from "@/components/portfolio/Section";
 import { POSTS, isInternal } from "@/lib/writing";
+import { getTopTracks } from "@/lib/spotify.functions";
+import { getRecentlyPlayed } from "@/lib/spotify.functions";
+import type { SpotifyTrack } from "@/lib/spotify.server";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -96,6 +101,111 @@ const INTERESTS = [
     body: "Relational foundation models and other enterprise FMs that predict directly from business data — and how to extend them from zero-shot predictions to zero-shot actions.",
   },
 ];
+
+function TrackRow({ track, index }: { track: SpotifyTrack; index: number }) {
+  return (
+    <a
+      href={track.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 rounded-lg p-2 transition hover:bg-background/60"
+    >
+      {track.image ? (
+        <img
+          src={track.image}
+          alt={track.album}
+          className="h-12 w-12 flex-shrink-0 rounded object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded bg-border">
+          <Music2 className="h-5 w-5 text-muted-foreground" />
+        </div>
+      )}
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-medium text-foreground">
+          <span className="mr-2 text-muted-foreground">{index + 1}</span>
+          {track.name}
+        </p>
+        <p className="truncate text-xs text-muted-foreground">{track.artist}</p>
+      </div>
+    </a>
+  );
+}
+
+function SpotifyListening() {
+  const fetchTop = useServerFn(getTopTracks);
+  const fetchRecent = useServerFn(getRecentlyPlayed);
+
+  const topQuery = useQuery({
+    queryKey: ["spotify-top"],
+    queryFn: () => fetchTop(),
+    staleTime: 1000 * 60 * 5,
+  });
+  const recentQuery = useQuery({
+    queryKey: ["spotify-recent"],
+    queryFn: () => fetchRecent(),
+    staleTime: 1000 * 60 * 5,
+  });
+
+  return (
+    <div className="grid gap-6 sm:grid-cols-2">
+      {/* Top tracks */}
+      <div className="rounded-xl border border-border bg-card p-5">
+        <h3 className="mb-1 text-sm font-semibold text-foreground">Top Tracks</h3>
+        <p className="mb-4 text-xs text-muted-foreground">Last 4 weeks</p>
+        {topQuery.isLoading ? (
+          <div className="space-y-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="h-12 w-12 flex-shrink-0 rounded bg-border animate-pulse" />
+                <div className="flex-1 space-y-1.5">
+                  <div className="h-3.5 w-3/4 rounded bg-border animate-pulse" />
+                  <div className="h-2.5 w-1/2 rounded bg-border animate-pulse" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : topQuery.data?.error ? (
+          <p className="text-sm text-muted-foreground">Unavailable right now.</p>
+        ) : (
+          <div className="space-y-1">
+            {(topQuery.data?.tracks ?? []).map((t, i) => (
+              <TrackRow key={t.url + i} track={t} index={i} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Recently played */}
+      <div className="rounded-xl border border-border bg-card p-5">
+        <h3 className="mb-1 text-sm font-semibold text-foreground">Recently Played</h3>
+        <p className="mb-4 text-xs text-muted-foreground">Latest listening</p>
+        {recentQuery.isLoading ? (
+          <div className="space-y-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div className="h-12 w-12 flex-shrink-0 rounded bg-border animate-pulse" />
+                <div className="flex-1 space-y-1.5">
+                  <div className="h-3.5 w-3/4 rounded bg-border animate-pulse" />
+                  <div className="h-2.5 w-1/2 rounded bg-border animate-pulse" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : recentQuery.data?.error ? (
+          <p className="text-sm text-muted-foreground">Unavailable right now.</p>
+        ) : (
+          <div className="space-y-1">
+            {(recentQuery.data?.tracks ?? []).map((t, i) => (
+              <TrackRow key={t.url + i} track={t} index={i} />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 function Index() {
   return (
@@ -244,6 +354,11 @@ function Index() {
             );
           })}
         </div>
+      </Section>
+
+      {/* SPOTIFY */}
+      <Section id="listening" eyebrow="Now Playing" title="What I'm listening to.">
+        <SpotifyListening />
       </Section>
 
       {/* CONTACT */}
