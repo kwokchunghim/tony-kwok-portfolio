@@ -141,21 +141,17 @@ function Index() {
       {/* ABOUT */}
       <Section id="about" eyebrow="About" title="Background.">
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
-          <p>I am a Machine Learning Engineer at Spotify, currently based in London.</p>
           <p>
-            My experience spans personalization, customer understanding, experimentation,
-            retention, and growth. I've worked on production machine learning systems
-            and data products that influence customer experiences and business outcomes
-            at scale.
+            My work spans modelling, experimentation and the engineering needed to put ML into production. At Spotify, I work on personalising subscription experiences, connecting predictions to decisions and evaluating their impact through experiments.
           </p>
           <p>
-            I studied Statistics at the University of Warwick and have a strong interest
-            in causal machine learning, constrained optimization, and decision-making under
-            uncertainty.
+            I'm particularly interested in how models learn useful representations of people and structured data. Recently, I've been exploring generative recommenders, tabular and relational foundation models, and how these approaches connect to practical decision-making.
           </p>
           <p>
-            Outside of work, I enjoy exploring how experimentation, machine learning,
-            and decision systems can drive better outcomes.
+            I studied Mathematics at the Chinese University of Hong Kong and Statistics at the University of Warwick, where my dissertation explored vision-language models for chest X-ray report generation.
+          </p>
+          <p>
+            Away from work, I enjoy singing, badminton and playing music.
           </p>
         </div>
       </Section>
