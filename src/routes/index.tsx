@@ -134,22 +134,13 @@ function TrackRow({ track, index }: { track: SpotifyTrack; index: number }) {
   );
 }
 
-const TIME_RANGES = [
-  { label: "1 week", value: "short_term" as const },
-  { label: "1 month", value: "short_term" as const },
-  { label: "3 months", value: "medium_term" as const },
-  { label: "6 months", value: "long_term" as const },
-];
-
 function SpotifyListening() {
   const fetchTop = useServerFn(getTopTracks);
   const fetchRecent = useServerFn(getRecentlyPlayed);
 
-  const [timeRange, setTimeRange] = useState<"short_term" | "medium_term" | "long_term">("medium_term");
-
   const topQuery = useQuery({
-    queryKey: ["spotify-top", timeRange],
-    queryFn: () => fetchTop({ data: { timeRange } }),
+    queryKey: ["spotify-top"],
+    queryFn: () => fetchTop(),
     staleTime: 1000 * 60 * 5,
   });
   const recentQuery = useQuery({
@@ -162,24 +153,8 @@ function SpotifyListening() {
     <div className="grid gap-6 sm:grid-cols-2">
       {/* Top tracks */}
       <div className="rounded-xl border border-border bg-card p-5">
-        <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-sm font-semibold text-foreground">Top Tracks</h3>
-          <div className="flex gap-1">
-            {TIME_RANGES.map((r) => (
-              <button
-                key={r.value}
-                onClick={() => setTimeRange(r.value)}
-                className={`rounded-md px-2 py-1 text-xs transition ${
-                  timeRange === r.value
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-accent"
-                }`}
-              >
-                {r.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <h3 className="mb-1 text-sm font-semibold text-foreground">Top Tracks</h3>
+        <p className="mb-4 text-xs text-muted-foreground">Last 3 months</p>
         {topQuery.isLoading ? (
           <div className="space-y-3">
             {Array.from({ length: 5 }).map((_, i) => (
