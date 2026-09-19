@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WritingSlugRouteImport } from './routes/writing.$slug'
+import { Route as ApiPublicSpotifyCallbackRouteImport } from './routes/api/public/spotify/callback'
+import { Route as ApiPublicSpotifyConnectRouteImport } from './routes/api/public/spotify/connect'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +30,70 @@ const WritingSlugRoute = WritingSlugRouteImport.update({
   path: '/writing/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicSpotifyCallbackRoute =
+  ApiPublicSpotifyCallbackRouteImport.update({
+    id: '/api/public/spotify/callback',
+    path: '/api/public/spotify/callback',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicSpotifyConnectRoute = ApiPublicSpotifyConnectRouteImport.update({
+  id: '/api/public/spotify/connect',
+  path: '/api/public/spotify/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/api/public/spotify/callback': typeof ApiPublicSpotifyCallbackRoute
+  '/api/public/spotify/connect': typeof ApiPublicSpotifyConnectRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/api/public/spotify/callback': typeof ApiPublicSpotifyCallbackRoute
+  '/api/public/spotify/connect': typeof ApiPublicSpotifyConnectRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/writing/$slug': typeof WritingSlugRoute
+  '/api/public/spotify/callback': typeof ApiPublicSpotifyCallbackRoute
+  '/api/public/spotify/connect': typeof ApiPublicSpotifyConnectRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/writing/$slug'
+  fullPaths:
+    | '/'
+    | '/sitemap.xml'
+    | '/writing/$slug'
+    | '/api/public/spotify/callback'
+    | '/api/public/spotify/connect'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/writing/$slug'
-  id: '__root__' | '/' | '/sitemap.xml' | '/writing/$slug'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/writing/$slug'
+    | '/api/public/spotify/callback'
+    | '/api/public/spotify/connect'
+  id:
+    | '__root__'
+    | '/'
+    | '/sitemap.xml'
+    | '/writing/$slug'
+    | '/api/public/spotify/callback'
+    | '/api/public/spotify/connect'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WritingSlugRoute: typeof WritingSlugRoute
+  ApiPublicSpotifyCallbackRoute: typeof ApiPublicSpotifyCallbackRoute
+  ApiPublicSpotifyConnectRoute: typeof ApiPublicSpotifyConnectRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +119,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WritingSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/spotify/callback': {
+      id: '/api/public/spotify/callback'
+      path: '/api/public/spotify/callback'
+      fullPath: '/api/public/spotify/callback'
+      preLoaderRoute: typeof ApiPublicSpotifyCallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/spotify/connect': {
+      id: '/api/public/spotify/connect'
+      path: '/api/public/spotify/connect'
+      fullPath: '/api/public/spotify/connect'
+      preLoaderRoute: typeof ApiPublicSpotifyConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +140,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WritingSlugRoute: WritingSlugRoute,
+  ApiPublicSpotifyCallbackRoute: ApiPublicSpotifyCallbackRoute,
+  ApiPublicSpotifyConnectRoute: ApiPublicSpotifyConnectRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
