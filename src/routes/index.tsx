@@ -35,7 +35,9 @@ export const Route = createFileRoute("/")({
           "Machine Learning Engineer in London working on personalization, experimentation, retention, and customer decision-making.",
       },
       { name: "twitter:image", content: "https://tonykwokch.com/social-preview.png?v=2" },
+      { property: "og:url", content: "https://tonykwokch.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://tonykwokch.com/" }],
   }),
   component: Index,
 });

@@ -77,7 +77,9 @@ export const Route = createFileRoute("/writing/$slug")({
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: post.excerpt },
         { name: "twitter:image", content: socialImage },
+        { property: "og:url", content: `https://tonykwokch.com/writing/${post.slug}` },
       ],
+      links: [{ rel: "canonical", href: `https://tonykwokch.com/writing/${post.slug}` }],
     };
   },
   errorComponent: PostError,
