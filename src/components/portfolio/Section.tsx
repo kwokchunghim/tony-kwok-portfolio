@@ -5,11 +5,13 @@ export function Section({
   id,
   eyebrow,
   title,
+  headerAction,
   children,
 }: {
   id: string;
   eyebrow?: string;
   title?: string;
+  headerAction?: ReactNode;
   children: ReactNode;
 }) {
   return (
@@ -28,9 +30,12 @@ export function Section({
             </div>
           )}
           {title && (
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {title}
-            </h2>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                {title}
+              </h2>
+              {headerAction}
+            </div>
           )}
         </motion.div>
       )}
