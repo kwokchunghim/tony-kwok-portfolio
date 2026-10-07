@@ -140,7 +140,7 @@ function SpotifyListening() {
   const fetchRecent = useServerFn(getRecentlyPlayed);
 
   const topQuery = useQuery({
-    queryKey: ["spotify-top"],
+    queryKey: ["spotify-top", "short_term"],
     queryFn: () => fetchTop(),
     staleTime: 1000 * 60 * 5,
   });
