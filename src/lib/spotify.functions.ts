@@ -8,7 +8,7 @@ export interface SpotifyResult {
 
 export const getTopTracks = createServerFn({ method: "GET" }).handler(async (): Promise<SpotifyResult> => {
   try {
-    const tracks = await fetchTopTracks(5, "medium_term");
+    const tracks = await fetchTopTracks(5, "short_term");
     return { tracks, error: null };
   } catch (e) {
     return { tracks: [], error: e instanceof Error ? e.message : "Spotify unavailable" };
