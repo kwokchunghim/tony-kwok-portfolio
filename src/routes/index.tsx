@@ -245,7 +245,7 @@ function Index() {
               <MapPin className="h-3.5 w-3.5" /> London, UK
             </div>
             <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Machine learning for user understanding and personalisation.
+              Machine learning for user understanding and personalisation
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I'm Tony, a Machine Learning Engineer at Spotify in London. I build models and production ML systems that learn from user behaviour and optimise user journeys. I also write about recommender systems and foundation models for structured data.
@@ -270,7 +270,7 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <Section id="about" eyebrow="About" title="Background.">
+      <Section id="about" eyebrow="About" title="Background">
         <div className="max-w-3xl space-y-5 text-base leading-relaxed text-foreground/85 sm:text-lg">
           <p>
             My work spans modelling, experimentation and the engineering needed to put ML into production. At Spotify, I work on personalising subscription experiences, connecting predictions to decisions and evaluating their impact through experiments.
@@ -288,7 +288,7 @@ function Index() {
       </Section>
 
       {/* EXPERIENCE */}
-      <Section id="experience" eyebrow="Experience" title="Selected roles.">
+      <Section id="experience" eyebrow="Experience" title="Selected roles">
         <div className="divide-y divide-border rounded-xl border border-border bg-card">
           {EXPERIENCE.map((job) => (
             <div key={job.company + job.period} className="grid gap-3 p-6 sm:grid-cols-[180px_1fr] sm:gap-8 sm:p-8">
@@ -316,7 +316,7 @@ function Index() {
       </Section>
 
       {/* INTERESTS */}
-      <Section id="interests" eyebrow="Areas of Interest" title="What I think about.">
+      <Section id="interests" eyebrow="Areas of Interest" title="What I think about">
         <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {INTERESTS.map((item) => (
             <div key={item.title} className="bg-card p-6">
@@ -328,7 +328,7 @@ function Index() {
       </Section>
 
       {/* WRITING */}
-      <Section id="writing" eyebrow="Writing" title="Notes and essays.">
+      <Section id="writing" eyebrow="Writing" title="Notes and essays">
         <p className="max-w-2xl text-sm text-muted-foreground">
           Thoughts on machine learning, experimentation, growth, and decision-making.
         </p>
@@ -381,14 +381,14 @@ function Index() {
       <Section
         id="listening"
         eyebrow="Now Playing"
-        title="What I've been listening lately."
+        title="What I've been listening lately"
         headerAction={<SpotifyProfileLink />}
       >
         <SpotifyListening />
       </Section>
 
       {/* CONTACT */}
-      <Section id="contact" eyebrow="Contact" title="Get in touch.">
+      <Section id="contact" eyebrow="Contact" title="Get in touch">
         <div className="max-w-2xl">
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
             I'm particularly interested in speaking with operators and leaders working on
