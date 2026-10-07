@@ -155,7 +155,7 @@ function SpotifyListening() {
       {/* Top tracks */}
       <div className="rounded-xl border border-border bg-card p-5">
         <h3 className="mb-1 text-sm font-semibold text-foreground">Top Tracks</h3>
-        <p className="mb-4 text-xs text-muted-foreground">Last 3 months</p>
+        <p className="mb-4 text-xs text-muted-foreground">Last month</p>
         {topQuery.isLoading ? (
           <div className="space-y-3">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -367,7 +367,7 @@ function Index() {
       </Section>
 
       {/* SPOTIFY */}
-      <Section id="listening" eyebrow="Now Playing" title="What I'm listening to on Spotify.">
+      <Section id="listening" eyebrow="Now Playing" title="What I've been listening lately.">
         <SpotifyListening />
       </Section>
 
